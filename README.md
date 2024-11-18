@@ -20,7 +20,7 @@ Welcome to my personal portfolio! I'm Youssef FDIL, a passionate Full Stack Deve
 
 You can view the live version of my portfolio by clicking the link below:
 
-[Visit My Portfolio](https://github-commit-card.vercel.app/)
+[Visit My Portfolio](https://yfb-portfolio.vercel.app/)
 
 ## ⚙️ Setup Instructions
 
