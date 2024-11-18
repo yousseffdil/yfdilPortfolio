@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Youtube } from "lucide-react";
+import { Youtube, Sparkles } from "lucide-react";
 
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
@@ -57,6 +57,7 @@ export default function PortFolio() {
         <aside className="border-4 border-lime-300 p-6">
           <h2 className="text-3xl mb-4 flex items-center">
             <Youtube className="mr-2" />
+            <Sparkles className="mr-2" /> 
             MY YOUTUBE CHANNEL !!!
           </h2>
           <p>
