@@ -10,6 +10,7 @@ export default function PortFolio() {
   }
 
   return (
+
     <div 
       className="min-h-screen bg-purple-900 text-lime-300 font-mono p-4 cursor-none"
       onMouseMove={handleMouseMove}
