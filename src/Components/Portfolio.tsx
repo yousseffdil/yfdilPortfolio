@@ -25,7 +25,7 @@ export default function PortFolio() {
           transform: `translate(${cursorPosition.x - 12}px, ${
             cursorPosition.y - 12
           }px)`,
-          transition: "transform 0.2s ease-out",
+          transition: "transform 0.2s ease-out"
         }}
       />
 
@@ -62,7 +62,7 @@ export default function PortFolio() {
           </h2>
           <p>
             In this Youtube Channel is where i upload all my music or creative
-            things
+            things that i do in my free time, i hope you enjoy it! 🎶
           </p>
           <a
             href="https://www.youtube.com/@YFB_Prod/videos"
@@ -72,7 +72,6 @@ export default function PortFolio() {
           </a>
         </aside>
       </main>
-
       <footer className="mt-12 text-center border-t-4 border-lime-300 pt-4">
         <p>
           &copy; {new Date().getFullYear()} FDIL YOUSSEF | CRAFTED WITH &lt;CODE
