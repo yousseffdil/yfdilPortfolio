@@ -1,22 +1,35 @@
 import { useState } from "react";
-import { Youtube, Sparkles } from "lucide-react";
+import { Youtube, Sparkles, Moon, Sun } from "lucide-react";
 
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
-
+import { Button } from "./button";
 export default function PortFolio() {
   const [activeSection, setActiveSection] = useState("about");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  useState(() => {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    setIsDarkMode(prefersDark);
+  });
   const handleMouseMove = (e: React.MouseEvent) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
   };
-
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <div
-      className="min-h-screen bg-purple-900 text-lime-300 font-mono p-4 cursor-none"
+      className={`min-h-screen font-mono p-4 cursor-none transition-colors duration-300 ${
+        isDarkMode
+          ? "bg-purple-900 text-lime-300"
+          : "bg-lime-100 text-purple-900"
+      }`}
       onMouseMove={handleMouseMove}
     >
       <div
@@ -25,13 +38,40 @@ export default function PortFolio() {
           transform: `translate(${cursorPosition.x - 12}px, ${
             cursorPosition.y - 12
           }px)`,
-          transition: "transform 0.2s ease-out"
+          transition: "transform 0.2s ease-out",
         }}
       />
 
-      <header className="mb-8 border-b-4 border-lime-300 pb-4">
-        <h1 className="text-5xl font-bold mb-2">&lt;YOUSSEF FDIL /&gt;</h1>
-        <p className="text-2xl">FULL STACK | UI/UX ENTHUSIAST | CODE ARTIST</p>
+      <header
+        className={`mb-8 pb-4 ${
+          isDarkMode
+            ? "border-b-4 border-lime-300"
+            : "border-b-4 border-purple-900"
+        }`}
+      >
+        <div className="flex justify-between items-center">
+          <h1 className="text-5xl font-bold mb-2">&lt;JOHN_DOE /&gt;</h1>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={toggleTheme}
+            className={
+              isDarkMode
+                ? "bg-lime-300 text-purple-900"
+                : "bg-purple-900 text-lime-300"
+            }
+          >
+            {isDarkMode ? (
+              <Sun className="h-[1.2rem] w-[1.2rem]" />
+            ) : (
+              <Moon className="h-[1.2rem] w-[1.2rem]" />
+            )}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </div>
+        <p className="text-2xl">
+          FRONTEND DEVELOPER | UI/UX ENTHUSIAST | CODE ARTIST
+        </p>
       </header>
 
       <nav className="mb-8 flex flex-wrap gap-4">
@@ -57,7 +97,7 @@ export default function PortFolio() {
         <aside className="border-4 border-lime-300 p-6">
           <h2 className="text-3xl mb-4 flex items-center">
             <Youtube className="mr-2" />
-            <Sparkles className="mr-2" /> 
+            <Sparkles className="mr-2" />
             MY YOUTUBE CHANNEL !!!
           </h2>
           <p>
