@@ -12,10 +12,10 @@ export default function Contact() {
           friendly chat about web development.
         </p>
         <a
-          href="mailto:fdilyoussef@example.com"
+          href="mailto:fdilyoussef@gmail.com"
           className="text-xl underline hover:text-pink-400 transition-colors"
         >
-          fdilyoussef@example.com
+          fdilyoussef@gmail.com
         </a>
         <div className="mt-6 flex space-x-4">
           <a
