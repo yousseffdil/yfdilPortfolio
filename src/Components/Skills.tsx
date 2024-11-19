@@ -20,6 +20,7 @@ export default function Skills() {
             <h3 className="text-xl mb-2">Frameworks & Libraries</h3>
             <ul className="list-disc list-inside">
               <li>React / Next.js</li>
+              <li>Angular.js</li>
               <li>Vue.js</li>
               <li>Tailwind CSS</li>
               <li>Three.js</li>
@@ -32,6 +33,8 @@ export default function Skills() {
               <li>Webpack / Vite</li>
               <li>Jest / React Testing Library</li>
               <li>Figma</li>
+              <li>Blender</li>
+              <li>Adobe Premiere, After Effects, Media Encoder, Photoshop, Illustrator</li>
             </ul>
           </div>
           <div>
