@@ -6,6 +6,7 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import { Button } from "./button";
+import CanvasThreejs from "./CanvasThreejs";
 export default function PortFolio() {
   const [activeSection, setActiveSection] = useState("about");
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -38,7 +39,7 @@ export default function PortFolio() {
           transform: `translate(${cursorPosition.x - 12}px, ${
             cursorPosition.y - 12
           }px)`,
-          transition: "transform 0.2s ease-out",
+          transition: "transform 0.1s ease-out",
         }}
       />
 
@@ -110,6 +111,14 @@ export default function PortFolio() {
           >
             Go to Channel
           </a>
+          {isDarkMode && (
+            <CanvasThreejs mousePosition={cursorPosition} />
+          )          
+          }
+          {
+          !isDarkMode && <div className="h-96" />
+
+          }
         </aside>
       </main>
       <footer className="mt-12 text-center border-t-4 border-lime-300 pt-4">
