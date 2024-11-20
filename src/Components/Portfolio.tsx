@@ -34,7 +34,7 @@ export default function PortFolio() {
       onMouseMove={handleMouseMove}
     >
       <div
-        className="fixed top-0 left-0 w-7 h-7 bg-lime-300 mix-blend-difference rounded-full pointer-events-none"
+        className="fixed top-0 left-0 w-6 h-6 bg-lime-300 mix-blend-difference rounded-full pointer-events-none"
         style={{
           transform: `translate(${cursorPosition.x - 12}px, ${
             cursorPosition.y - 12

@@ -1,7 +1,13 @@
 *{
   cursor: none;
+  overflow: hidden;
 }
 *:hover{
   cursor: none;
 }
 
+canvas{
+  cursor: none;
+  overflow: hidden;
+  filter: opacity(0.8);
+}
