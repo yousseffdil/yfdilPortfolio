@@ -1,10 +1,12 @@
-import {
-    User,
-  } from "lucide-react";
-export default function AboutMe() {
+import { User } from "lucide-react";
+export default function AboutMe({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <>
-      <section className="border-4 border-lime-300 p-6">
+      <section
+        className={`border-4 p-6 ${
+          isDarkMode ? "border-yellow-300" : "border-gray-900"
+        }`}
+      >
         <h2 className="text-3xl mb-4 flex items-center">
           <User className="mr-2" /> ABOUT ME
         </h2>

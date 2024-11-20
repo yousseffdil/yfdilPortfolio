@@ -1,10 +1,12 @@
-import {
-  Sparkles,
-} from "lucide-react";
-export default function Projects() {
+import { Sparkles } from "lucide-react";
+export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <>
-      <section className="border-4 border-lime-300 p-6">
+      <section
+        className={`border-4 p-6 ${
+          isDarkMode ? "border-yellow-300" : "border-gray-900"
+        }`}
+      >
         <h2 className="text-3xl mb-4 flex items-center">
           <Sparkles className="mr-2" /> FEATURED PROJECTS
         </h2>

@@ -1,9 +1,13 @@
 import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 
-export default function Contact() {
+export default function Contact({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <>
-      <section className="border-4 border-lime-300 p-6">
+      <section
+        className={`border-4 p-6 ${
+          isDarkMode ? "border-yellow-300" : "border-gray-900"
+        }`}
+      >
         <h2 className="text-3xl mb-4 flex items-center">
           <Mail className="mr-2" /> GET IN TOUCH
         </h2>

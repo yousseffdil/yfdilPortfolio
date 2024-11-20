@@ -1,13 +1,19 @@
 import { Code } from "lucide-react";
-export default function Skills() {
+export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <>
-      <section className="border-4 border-lime-300 p-6">
+      <section
+        className={`border-4 p-6 ${
+          isDarkMode ? "border-yellow-300" : "border-gray-900"
+        }`}
+      >
         <h2 className="text-3xl mb-4 flex items-center">
           <Code className="mr-2" /> SKILLS & TOOLS
         </h2>
         <div className="grid grid-cols-2 gap-4">
-          <div>
+          <div
+            className={`p-6 ${isDarkMode ? "bg-gray-800" : "bg-yellow-200"}`}
+          >
             <h3 className="text-xl mb-2">Languages</h3>
             <ul className="list-disc list-inside">
               <li>HTML5 / CSS3</li>
@@ -16,7 +22,9 @@ export default function Skills() {
               <li>Python</li>
             </ul>
           </div>
-          <div>
+          <div
+            className={`p-6 ${isDarkMode ? "bg-gray-800" : "bg-yellow-200"}`}
+          >
             <h3 className="text-xl mb-2">Frameworks & Libraries</h3>
             <ul className="list-disc list-inside">
               <li>React / Next.js</li>
@@ -26,7 +34,9 @@ export default function Skills() {
               <li>Three.js</li>
             </ul>
           </div>
-          <div>
+          <div
+            className={`p-6 ${isDarkMode ? "bg-gray-800" : "bg-yellow-200"}`}
+          >
             <h3 className="text-xl mb-2">Tools</h3>
             <ul className="list-disc list-inside">
               <li>Git / GitHub</li>
@@ -34,10 +44,15 @@ export default function Skills() {
               <li>Jest / React Testing Library</li>
               <li>Figma</li>
               <li>Blender</li>
-              <li>Adobe Premiere, After Effects, Media Encoder, Photoshop, Illustrator</li>
+              <li>
+                Adobe Premiere, After Effects, Media Encoder, Photoshop,
+                Illustrator
+              </li>
             </ul>
           </div>
-          <div>
+          <div
+            className={`p-6 ${isDarkMode ? "bg-gray-800" : "bg-yellow-200"}`}
+          >
             <h3 className="text-xl mb-2">Concepts</h3>
             <ul className="list-disc list-inside">
               <li>Responsive Design</li>
