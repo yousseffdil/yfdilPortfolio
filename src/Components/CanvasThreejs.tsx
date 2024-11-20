@@ -2,7 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { useRef } from "react";
-import { DoubleSide, MeshStandardMaterial, Object3D, Color } from "three";
+import { DoubleSide, MeshStandardMaterial, Object3D } from "three";
 
 function YFBModel({ mousePosition }: { mousePosition: { x: number; y: number } }) {
   const { scene, materials } = useGLTF("/YFB.glb");
