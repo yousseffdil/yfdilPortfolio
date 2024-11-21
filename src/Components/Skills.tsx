@@ -12,7 +12,8 @@ export default function Skills({ isDarkMode }: { isDarkMode: boolean }) {
         </h2>
         <div className="grid grid-cols-2 gap-4">
           <div
-            className={`p-6 ${isDarkMode ? "bg-gray-800" : "bg-yellow-200"}`}
+            className={`p-6 ${isDarkMode ? "bg-gray-800" : "bg-yellow-200"}` }
+            style={{ transition: "0.3s" }}
           >
             <h3 className="text-xl mb-2">Languages</h3>
             <ul className="list-disc list-inside">

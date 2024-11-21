@@ -43,6 +43,7 @@ export default function PortFolio() {
           }px)`,
           transition: "transform 0.1s ease-out",
           mixBlendMode: isDarkMode ? "difference" : "normal",
+          zIndex: 9999,
         }}
       />
 
