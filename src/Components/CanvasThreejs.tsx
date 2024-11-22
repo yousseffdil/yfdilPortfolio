@@ -15,7 +15,7 @@ function Cube({ darkMode }: { darkMode: boolean }) {
   })
   return (
     <mesh rotation={[0, 0, 0]} ref={meshRef}>
-      <boxGeometry args={[2, 2, 2, 5, 5, 5]} />
+      <sphereGeometry args={[2, 10, 5]} />
       <meshStandardMaterial 
         color={darkMode ? "#fde047" : "#5376bf"} 
         emissive={darkMode ? "#dcb903" : "#000000"} 

@@ -36,14 +36,14 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
         </h2>
         {/* Contenedor con altura fija, scroll y estilo personalizado */}
         <ul
-          className="space-y-6 h-[70vh] overflow-y-auto scroll-container projects-list"
+          className="space-y-6 h-[70vh] overflow-y-auto scroll-container"
         >
           {repos.map((repo) => (
             <li key={repo.id}>
               <ProjectCard
-                tittle={repo.name} // Nombre del repositorio
-                description={repo.description || "No description provided"} // Descripción del repositorio
-                link={repo.html_url} // Enlace al repositorio
+                tittle={repo.name}
+                description={repo.description || "No description provided"} 
+                link={repo.html_url} 
                 isDarkMode={isDarkMode}
               />
             </li>
