@@ -36,7 +36,7 @@ export default function Projects({ isDarkMode }: { isDarkMode: boolean }) {
         </h2>
         {/* Contenedor con altura fija, scroll y estilo personalizado */}
         <ul
-          className="space-y-6 h-[70vh] overflow-y-auto scroll-container"
+          className="space-y-6 h-[70vh] overflow-y-auto scroll-container projects-list"
         >
           {repos.map((repo) => (
             <li key={repo.id}>

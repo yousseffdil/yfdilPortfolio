@@ -1,16 +1,26 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from '@react-three/drei';
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
+import * as THREE from 'three';
 
 function Cube({ darkMode }: { darkMode: boolean }) {
+  const meshRef = useRef<THREE.Mesh>(null!);
+
+  useFrame(() =>{
+    if(meshRef.current){
+      meshRef.current.rotation.x += 0.01 / 2;
+      meshRef.current.rotation.y += 0.01 / 2;
+    }
+  })
   return (
-    <mesh rotation={[0, 0, 0]}>
-      <boxGeometry args={[2.5, 2.5, 2.5]} />
+    <mesh rotation={[0, 0, 0]} ref={meshRef}>
+      <boxGeometry args={[2, 2, 2, 5, 5, 5]} />
       <meshStandardMaterial 
         color={darkMode ? "#fde047" : "#5376bf"} 
         emissive={darkMode ? "#dcb903" : "#000000"} 
         emissiveIntensity={darkMode ? 2 : 0} 
+        wireframe={true}
       />
     </mesh>
   );
@@ -36,7 +46,7 @@ export default function CanvasThreejs({ isDarkMode }: { isDarkMode: boolean }) {
               />
             </EffectComposer>
           )}
-          <OrbitControls />
+          <OrbitControls enableZoom={false}/>
         </Canvas>
       </div>
       <p className="mt-4 text-sm italic">^ Interactive 3D cube (drag to rotate) ^</p>
