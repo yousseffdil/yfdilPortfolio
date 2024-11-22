@@ -19,7 +19,7 @@ function Cube({ darkMode }: { darkMode: boolean }) {
       <meshStandardMaterial 
         color={darkMode ? "#fde047" : "#5376bf"} 
         emissive={darkMode ? "#dcb903" : "#000000"} 
-        emissiveIntensity={darkMode ? 2 : 0} 
+        emissiveIntensity={darkMode ? 3 : 0} 
         wireframe={true}
       />
     </mesh>
@@ -31,7 +31,7 @@ export default function CanvasThreejs({ isDarkMode }: { isDarkMode: boolean }) {
     <>
       <div style={{ width: "100%", height: "50vh" }} className="mt-6 h-64 border-2 border-dashed border-current p-4">
         <Canvas>
-          <ambientLight intensity={0.6} />
+          <ambientLight intensity={1} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
           <pointLight position={[10,10, 10]} />
           <Suspense fallback={null}>

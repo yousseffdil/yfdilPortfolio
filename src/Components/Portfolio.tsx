@@ -41,7 +41,7 @@ export default function PortFolio() {
           transform: `translate(${cursorPosition.x - 12}px, ${
             cursorPosition.y - 12
           }px)`,
-          transition: "transform 0s ease-out",
+          transition: "transform 0.1s ease-out",
           mixBlendMode: isDarkMode ? "difference" : "normal",
           zIndex: 9999,
         }}
