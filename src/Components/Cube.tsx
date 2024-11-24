@@ -1,5 +1,5 @@
 import { useRef, useEffect, useMemo, useState } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useTheme } from '../context/ThemeContext'
 import * as THREE from 'three'
