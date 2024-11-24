@@ -149,7 +149,7 @@ export default function Home() {
               >
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                 <p>{project.description}</p>
-                <button className="border border-foreground p-2 text-sm hover:bg-foreground hover:text-background transition-colors"   >
+                <button className="border border-foreground p-2 text-sm hover:bg-foreground hover:text-background transition-colors" style={{display: "none"}}  >
                     <a href={project.link}  rel="noreferrer">
                       View Project
                     </a>
