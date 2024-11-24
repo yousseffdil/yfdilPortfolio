@@ -4,7 +4,7 @@ import { OrbitControls } from '@react-three/drei'
 import { useTheme } from '../context/ThemeContext'
 import * as THREE from 'three'
 import { createNoise4D } from 'simplex-noise'
-import { Bloom, EffectComposer, Noise, SSAO } from '@react-three/postprocessing'
+import { EffectComposer, Noise, SSAO } from '@react-three/postprocessing'
 
 const noise4D = createNoise4D()
 
@@ -68,7 +68,6 @@ function CubeNode({ initialPosition, connections }: { initialPosition: [number, 
 }
 
 export function Cubes() {
-  const { scene } = useThree()
   const groupRef = useRef<THREE.Group>(null)
 
   const cubePositions = useMemo(() => {
