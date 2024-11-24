@@ -1,3 +1,3 @@
 # TODO
-- See how to load images dynamicli from my projects
-- Fill the link section in the project section
+- Load Images Dynamically: Research and implement a way to load images dynamically from my projects.
+- Complete Link Section: Add and configure the links for each project in the project section.
