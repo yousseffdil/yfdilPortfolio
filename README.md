@@ -22,34 +22,8 @@ You can view the live version of my portfolio by clicking the link below:
 
 [Visit My Portfolio](https://yfb-portfolio.vercel.app/)
 
-## ⚙️ Setup Instructions
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/portfolio.git
-    ```
-2. Navigate to the project folder:
-    ```bash
-    cd portfolio
-    ```
-3. Install the dependencies:
-    ```bash
-    npm install
-    ```
-4. Run the development server:
-    ```bash
-    npm run dev
-    ```
-5. Open your browser and go to:
-    ```
-    http://localhost:3000
-    ```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Preview
+<img src="./PORTFOLIO.png">
 
 ## 📫 Connect With Me
 
