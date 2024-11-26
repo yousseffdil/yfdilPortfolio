@@ -4,7 +4,7 @@ import { OrbitControls } from '@react-three/drei'
 import { useTheme } from '../context/ThemeContext'
 import * as THREE from 'three'
 import { createNoise4D } from 'simplex-noise'
-import { EffectComposer, Noise, SSAO } from '@react-three/postprocessing'
+import { EffectComposer, Noise } from '@react-three/postprocessing'
 
 const noise4D = createNoise4D()
 
@@ -71,7 +71,7 @@ export function Cubes() {
   const groupRef = useRef<THREE.Group>(null)
 
   const cubePositions = useMemo(() => {
-    return Array.from({ length: 50 }, () => [
+    return Array.from({ length: 20 }, () => [
       (Math.random() - 0.5) * 4,
       (Math.random() - 0.5) * 4,
       (Math.random() - 0.5) * 4
@@ -120,12 +120,6 @@ export function Cubes() {
       </group>
       <EffectComposer>
         <Noise opacity={0.02} />
-        <SSAO 
-          worldDistanceThreshold={1.0}
-          worldDistanceFalloff={0.1}
-          worldProximityThreshold={0.1}
-          worldProximityFalloff={0.1}
-        />
       </EffectComposer>
     </>
   )
