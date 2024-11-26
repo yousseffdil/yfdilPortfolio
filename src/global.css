@@ -8,8 +8,8 @@
 }
 
 [data-theme='dark'] {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: black;
+  --foreground: white;
 }
 
 body {

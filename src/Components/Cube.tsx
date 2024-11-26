@@ -57,8 +57,8 @@ function CubeNode({ initialPosition, connections }: { initialPosition: [number, 
   return (
     <group>
       <mesh ref={meshRef} position={position}>
-        <boxGeometry args={[0.2, 0.2, 0.2]} />
-        <meshStandardMaterial color={theme === 'light' ? "#000000" : "#ffffff"} wireframe />
+        <boxGeometry args={[0.3, 0.3, 0.3]} />
+        <meshStandardMaterial color={theme === 'light' ? "#000000" : "#ffffff"} wireframe={true} />
       </mesh>
       <lineSegments ref={lineRef} geometry={lineGeometry}>
         <lineBasicMaterial color={theme === 'light' ? "#000000" : "#ffffff"} />
@@ -110,8 +110,8 @@ export function Cubes() {
 
   return (
     <>
-      <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
-      <ambientLight intensity={0.5} />
+      <OrbitControls enableZoom={false} enablePan={false} enableRotate={false}  />
+      <ambientLight intensity={1} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <group ref={groupRef}>
         {cubePositions.map((position, index) => (

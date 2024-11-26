@@ -9,21 +9,21 @@ const projects = [
     name: "Woordle Clone",
     image: "/placeholder.svg?height=300&width=400",
     description: "A clone of the popular word game Wordle",
-    link: "#"
+    link: "#",
   },
   {
     name: "AI-Temperature Converter",
     image: "/placeholder.svg?height=300&width=400",
     description: "An intelligent temperature converter using machine learning",
-    link: "#"
+    link: "#",
   },
   {
     name: "KineticSpheres",
     image: "/placeholder.svg?height=300&width=400",
     description:
       "A mesmerizing animation of kinetic spheres using react-three-fiber",
-      link: "#"
-    },
+    link: "#",
+  },
 ];
 
 const experiences = [
@@ -130,8 +130,15 @@ export default function Home() {
               <Canvas>
                 <Cubes />
               </Canvas>
-              <div className="absolute bottom-2 left-2 text-xs bg-background p-1">
-                Move mouse to interact with the noisy cube network
+              <div className="absolute bottom-2 left-2 text-xs bg-background p-1 ">
+                <p className="p-1">
+                  Move mouse to interact with the noisy cube network
+                </p>
+              </div>
+              <div className="relative bottom-2 left-2 text-xs bg-background p-1">
+                <button className="border border-foreground p-1">
+                  Enable / Disable Wireframe
+                </button>
               </div>
             </div>
           </div>
@@ -149,10 +156,13 @@ export default function Home() {
               >
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                 <p>{project.description}</p>
-                <button className="border border-foreground p-2 text-sm hover:bg-foreground hover:text-background transition-colors" style={{display: "none"}}  >
-                    <a href={project.link}  rel="noreferrer">
-                      View Project
-                    </a>
+                <button
+                  className="border border-foreground p-2 text-sm hover:bg-foreground hover:text-background transition-colors"
+                  style={{ display: "none" }}
+                >
+                  <a href={project.link} rel="noreferrer">
+                    View Project
+                  </a>
                 </button>
               </div>
             ))}
@@ -165,11 +175,11 @@ export default function Home() {
                 top: `${mousePosition.y + 20}px`,
               }}
             >
-              {/* <img
+              <img
                 src={projects.find((p) => p.name === hoveredProject)?.image}
                 alt={hoveredProject}
                 className="w-64 h-auto object-cover border-2 border-foreground"
-              /> */}
+              />
             </div>
           )}
         </section>
