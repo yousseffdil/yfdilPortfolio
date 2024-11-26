@@ -70,6 +70,8 @@ const skills = [
 export default function Home() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [wireframe, setWireframe] = useState(false);
+
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -130,13 +132,13 @@ export default function Home() {
               <Canvas>
                 <Cubes />
               </Canvas>
-              <div className="absolute bottom-2 left-2 text-xs bg-background p-1 ">
+              <div className="absolute bottom-2 left-2 text-xs bg-background p-1" >
                 <p className="p-1">
                   Move mouse to interact with the noisy cube network
                 </p>
               </div>
-              <div className="relative bottom-2 left-2 text-xs bg-background p-1">
-                <button className="border border-foreground p-1">
+              <div className="relative bottom-2 top-2 text-xs bg-background">
+                <button className="border border-foreground p-1" onClick={() => setWireframe(!wireframe)}>
                   Enable / Disable Wireframe
                 </button>
               </div>
