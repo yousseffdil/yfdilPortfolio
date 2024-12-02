@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -8,8 +8,8 @@
 }
 
 [data-theme='dark'] {
-  --background: black;
-  --foreground: white;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 body {
@@ -32,6 +32,37 @@ body {
   display: none;
 }
 
+/* Brutalist-style button */
+.brutalist-button {
+  background-color: var(--foreground);
+  color: var(--background);
+  border: 2px solid var(--foreground);
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.brutalist-button:hover {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Section styles */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Hover effect */
+[class*="hover:"] {
+  transition: all 0.3s ease;
+}
+
+/* Project image styles */
+.fixed {
+  position: fixed;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -40,3 +71,7 @@ body {
   pointer-events: none;
 }
 
+form input, textarea {
+  cursor: none;
+  background-color: transparent !important;
+}

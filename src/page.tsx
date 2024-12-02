@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Cubes } from "./Components/Cube";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
+import { ContactForm } from "./Components/ContactForm";
 
 const projects = [
   {
@@ -227,6 +228,11 @@ export default function Home() {
               </span>
             ))}
           </div>
+        </section>
+
+        <section className="border border-foreground p-6">
+          <h2 className="text-3xl font-bold mb-4">CONTACT ME</h2>
+          {/* <ContactForm /> */}
         </section>
       </main>
 
