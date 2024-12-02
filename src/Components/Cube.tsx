@@ -8,7 +8,7 @@ import { EffectComposer, Noise } from '@react-three/postprocessing'
 
 const noise4D = createNoise4D()
 
-function CubeNode({ initialPosition, connections }: { initialPosition: [number, number, number], connections: [number, number, number][] }) {
+function CubeNode({ initialPosition, connections, isWireframe }: { initialPosition: [number, number, number], connections: [number, number, number][], isWireframe: boolean }) {
   const { theme } = useTheme()
   const meshRef = useRef<THREE.Mesh>(null)
   const lineRef = useRef<THREE.LineSegments>(null)
@@ -58,7 +58,7 @@ function CubeNode({ initialPosition, connections }: { initialPosition: [number, 
     <group>
       <mesh ref={meshRef} position={position}>
         <boxGeometry args={[0.3, 0.3, 0.3]} />
-        <meshStandardMaterial color={theme === 'light' ? "#000000" : "#ffffff"} wireframe={true} />
+        <meshStandardMaterial color={theme === 'light' ? "#000000" : "#ffffff"} wireframe={isWireframe} />
       </mesh>
       <lineSegments ref={lineRef} geometry={lineGeometry}>
         <lineBasicMaterial color={theme === 'light' ? "#000000" : "#ffffff"} />
@@ -67,7 +67,7 @@ function CubeNode({ initialPosition, connections }: { initialPosition: [number, 
   )
 }
 
-export function Cubes() {
+export function Cubes({isWireframe}: {isWireframe: boolean}) {
   const groupRef = useRef<THREE.Group>(null)
 
   const cubePositions = useMemo(() => {
@@ -115,7 +115,7 @@ export function Cubes() {
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <group ref={groupRef}>
         {cubePositions.map((position, index) => (
-          <CubeNode key={index} initialPosition={position} connections={connections[index]} />
+          <CubeNode key={index} initialPosition={position} connections={connections[index]} isWireframe={isWireframe} />
         ))}
       </group>
       <EffectComposer>

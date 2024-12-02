@@ -13,7 +13,7 @@ const projects = [
   },
   {
     name: "AI-Temperature Converter",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/public/projectss/IA.png",
     description: "An intelligent temperature converter using machine learning",
     link: "#",
   },
@@ -70,7 +70,7 @@ const skills = [
 export default function Home() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [wireframe, setWireframe] = useState(false);
+  const [wireframe, setWireframe] = useState(true);
 
 
   useEffect(() => {
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
             <div className="h-80 w-full border border-foreground relative">
               <Canvas>
-                <Cubes />
+                <Cubes isWireframe={wireframe}/>
               </Canvas>
               <div className="absolute bottom-2 left-2 text-xs bg-background p-1" >
                 <p className="p-1">
@@ -180,7 +180,7 @@ export default function Home() {
               <img
                 src={projects.find((p) => p.name === hoveredProject)?.image}
                 alt={hoveredProject}
-                className="w-64 h-auto object-cover border-2 border-foreground"
+                className="w-80 h-auto object-cover border-2 border-foreground"
               />
             </div>
           )}
