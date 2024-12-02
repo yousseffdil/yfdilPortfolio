@@ -3,8 +3,8 @@ import { Canvas } from "@react-three/fiber";
 import { Cubes } from "./Components/Cube";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
-import { ContactForm } from "./Components/ContactForm";
-
+// import { ContactForm } from "./Components/ContactForm";
+import { GitHub, Linkedin } from "react-feather";
 const projects = [
   {
     name: "Woordle Clone",
@@ -73,7 +73,6 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [wireframe, setWireframe] = useState(true);
 
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -131,15 +130,18 @@ export default function Home() {
             </div>
             <div className="h-80 w-full border border-foreground relative">
               <Canvas>
-                <Cubes isWireframe={wireframe}/>
+                <Cubes isWireframe={wireframe} />
               </Canvas>
-              <div className="absolute bottom-2 left-2 text-xs bg-background p-1" >
+              <div className="absolute bottom-2 left-2 text-xs bg-background p-1">
                 <p className="p-1">
                   Move mouse to interact with the noisy cube network
                 </p>
               </div>
               <div className="relative bottom-2 top-2 text-xs bg-background">
-                <button className="border border-foreground p-1" onClick={() => setWireframe(!wireframe)}>
+                <button
+                  className="border border-foreground p-1"
+                  onClick={() => setWireframe(!wireframe)}
+                >
                   Enable / Disable Wireframe
                 </button>
               </div>
@@ -230,14 +232,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border border-foreground p-6">
+        {/* <section className="border border-foreground p-6">
           <h2 className="text-3xl font-bold mb-4">CONTACT ME</h2>
-          {/* <ContactForm /> */}
-        </section>
+          <ContactForm /> 
+        </section> */}
       </main>
 
-      <footer className="p-6 border-t border-foreground mt-6">
+      <footer className="p-6 border-t border-foreground mt-6 flex justify-between items-center">
         <p>&copy; Youssef Fdil. All rights reserved.</p>
+        <div className="flex space-x-4">
+          <a href="https://github.com/yousseffdil">
+            <GitHub />
+          </a>
+          <a href="https://www.linkedin.com/in/youssef-fdil-6b6497187">
+            <Linkedin />
+          </a>
+        </div>
       </footer>
     </div>
   );
