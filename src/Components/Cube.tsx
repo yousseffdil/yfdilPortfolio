@@ -110,7 +110,7 @@ export function Cubes({isWireframe}: {isWireframe: boolean}) {
 
   return (
     <>
-      <OrbitControls enableZoom={false} enablePan={false} enableRotate={false}  />
+      <OrbitControls enableZoom={true} enablePan={false} enableRotate={false}  />
       <ambientLight intensity={1} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <group ref={groupRef}>
