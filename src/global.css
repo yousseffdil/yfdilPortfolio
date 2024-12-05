@@ -33,7 +33,7 @@ body {
 }
 
 /* Brutalist-style button */
-.brutalist-button {
+.-button-style {
   background-color: var(--foreground);
   color: var(--background);
   border: 2px solid var(--foreground);
@@ -43,7 +43,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.brutalist-button:hover {
+.-button-style:hover {
   background-color: var(--background);
   color: var(--foreground);
 }

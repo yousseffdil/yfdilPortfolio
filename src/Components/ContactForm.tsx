@@ -77,7 +77,7 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="brutalist-button"
+        className="-button-style"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Send Message"}

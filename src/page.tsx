@@ -113,7 +113,7 @@ export default function Home() {
               </p>
             </div>
             <div className="h-80 w-full border border-foreground relative">
-              <Canvas>
+              <Canvas frameloop="demand">
                 <Cubes isWireframe={wireframe} />
               </Canvas>
               <div className="absolute bottom-2 left-2 text-xs bg-background p-1">
