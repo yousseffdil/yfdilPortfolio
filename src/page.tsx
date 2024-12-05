@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Cubes } from "./Components/Cube";
 import { ThemeToggle } from "./Components/ThemeToggle";
