@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Cubes } from "./Components/Cube";
+import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
@@ -16,14 +15,12 @@ const projects = [
     name: "AI-Temperature Converter",
     image: "/public/projectss/IA.png",
     description: "An intelligent temperature converter using machine learning",
-    link: "#",
   },
   {
     name: "KineticSpheres",
     image: "/placeholder.svg?height=300&width=400",
     description:
       "A mesmerizing animation of kinetic spheres using react-three-fiber",
-    link: "#",
   },
 ];
 
@@ -70,8 +67,6 @@ const skills = [
 ];
 
 export default function Home() {
-  const [wireframe, setWireframe] = useState(true);
-
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
@@ -112,22 +107,14 @@ export default function Home() {
                 amazing together!
               </p>
             </div>
-            <div className="h-80 w-full border border-foreground relative">
+            <div className="h-full w-full border border-foreground relative">
               <Canvas>
-                <Cubes isWireframe={wireframe} />
+                <SpaceScene/>
               </Canvas>
               <div className="absolute bottom-2 left-2 text-xs bg-background p-1">
                 <p className="p-1">
-                  Move, drag or zoom to interact with the noisy cube network
+                  Move, drag or zoom to interact with the scene
                 </p>
-              </div>
-              <div className="relative bottom-2 top-2 text-xs bg-background">
-                <button
-                  className="border border-foreground p-1"
-                  onClick={() => setWireframe(!wireframe)}
-                >
-                  Enable / Disable Wireframe
-                </button>
               </div>
             </div>
           </div>
@@ -139,18 +126,10 @@ export default function Home() {
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="border border-foreground p-4 relative overflow-visible cursor-pointer"
+                className="border border-foreground p-4 relative overflow-visible"
               >
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                 <p>{project.description}</p>
-                <button
-                  className="border border-foreground p-2 text-sm hover:bg-foreground hover:text-background transition-colors"
-                  style={{ display: "none" }}
-                >
-                  <a href={project.link} rel="noreferrer">
-                    View Project
-                  </a>
-                </button>
               </div>
             ))}
           </div>
