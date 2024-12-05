@@ -110,9 +110,9 @@ export function Cubes({isWireframe}: {isWireframe: boolean}) {
 
   return (
     <>
-      <OrbitControls enableZoom={true} enablePan={false} enableRotate={false}  />
+      <OrbitControls enableZoom={true} enablePan={true} enableRotate={true}  />
       <ambientLight intensity={1} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <directionalLight position={[10, 5, 5]} intensity={1} />
       <group ref={groupRef}>
         {cubePositions.map((position, index) => (
           <CubeNode key={index} initialPosition={position} connections={connections[index]} isWireframe={isWireframe} />

@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Cubes } from "./Components/Cube";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
-// import { ContactForm } from "./Components/ContactForm";
+import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin } from "react-feather";
 const projects = [
   {
@@ -54,6 +54,7 @@ const skills = [
   "JavaScript",
   "TypeScript",
   "React",
+  "Angular",
   "Node.js",
   "Express",
   "MongoDB",
@@ -69,24 +70,7 @@ const skills = [
 ];
 
 export default function Home() {
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [wireframe, setWireframe] = useState(true);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
@@ -134,7 +118,7 @@ export default function Home() {
               </Canvas>
               <div className="absolute bottom-2 left-2 text-xs bg-background p-1">
                 <p className="p-1">
-                  Move mouse to interact with the noisy cube network
+                  Move, drag or zoom to interact with the noisy cube network
                 </p>
               </div>
               <div className="relative bottom-2 top-2 text-xs bg-background">
@@ -156,8 +140,6 @@ export default function Home() {
               <div
                 key={project.name}
                 className="border border-foreground p-4 relative overflow-visible cursor-pointer"
-                onMouseEnter={() => setHoveredProject(project.name)}
-                onMouseLeave={() => setHoveredProject(null)}
               >
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                 <p>{project.description}</p>
@@ -172,21 +154,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {hoveredProject && (
-            <div
-              className="fixed pointer-events-none z-50"
-              style={{
-                left: `${mousePosition.x + 20}px`,
-                top: `${mousePosition.y + 20}px`,
-              }}
-            >
-              <img
-                src={projects.find((p) => p.name === hoveredProject)?.image}
-                alt={hoveredProject}
-                className="w-80 h-auto object-cover border-2 border-foreground"
-              />
-            </div>
-          )}
         </section>
 
         <section className="border border-foreground p-6">
@@ -232,10 +199,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="border border-foreground p-6">
+        <section className="border border-foreground p-6">
           <h2 className="text-3xl font-bold mb-4">CONTACT ME</h2>
           <ContactForm /> 
-        </section> */}
+        </section> 
       </main>
 
       <footer className="p-6 border-t border-foreground mt-6 flex justify-between items-center">
