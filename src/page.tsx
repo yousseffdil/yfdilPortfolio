@@ -107,15 +107,10 @@ export default function Home() {
                 amazing together!
               </p>
             </div>
-            <div className="h-full w-full border border-foreground relative">
+            <div className="h-full w-full border border-foreground relaÇÑÉMEtive">
               <Canvas>
                 <SpaceScene/>
               </Canvas>
-              <div className="absolute bottom-2 left-2 text-xs bg-background p-1">
-                <p className="p-1">
-                  Move, drag or zoom to interact with the scene
-                </p>
-              </div>
             </div>
           </div>
         </section>

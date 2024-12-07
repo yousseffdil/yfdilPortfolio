@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: white;
+  --foreground: black;
 }
 
 [data-theme='dark'] {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: black;
+  --foreground: white;
 }
 
 body {
@@ -26,13 +26,13 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
+  border-radius: 100%;
 }
 
 .custom-cursor.pointer {
   display: none;
 }
 
-/* Brutalist-style button */
 .-button-style {
   background-color: var(--foreground);
   color: var(--background);
@@ -48,7 +48,6 @@ body {
   color: var(--foreground);
 }
 
-/* Section styles */
 section {
   margin-bottom: 2rem;
 }
