@@ -28,7 +28,17 @@ body {
   z-index: 9999;
   border-radius: 100%;
 }
-
+.custom-cursor::after{
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--foreground);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}
 .custom-cursor.pointer {
   display: none;
 }
