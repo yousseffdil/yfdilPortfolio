@@ -58,10 +58,9 @@ function Asteroid({ position }: { position: [number, number, number] }) {
 export function SpaceScene() {
   const { camera } = useThree();
   const groupRef = useRef<THREE.Group>(null);
-  const radius = 5; // Radio de la órbita
+  const radius = 8; // Radio de la órbita
   const speed = 0.5; // Velocidad de rotación
-  const height = 2; // Altura fija de la cámara
-
+  const height = 3; // Altura fija de la cámara
 
   const generateRandomAsteroids = (count: number) => {
     const positions: [number, number, number][] = [];
