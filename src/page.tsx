@@ -3,7 +3,7 @@ import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
-import { GitHub, Linkedin } from "react-feather";
+import { GitHub, Linkedin, Youtube } from "react-feather";
 const projects = [
   {
     name: "Woordle Clone",
@@ -72,7 +72,14 @@ export default function Home() {
       <CustomCursor />
       <header className="p-6 border-b border-foreground flex justify-between items-center">
         <h1 className="text-4xl font-bold">Youssef Fdil</h1>
-        <ThemeToggle />
+        <div className="flex space-x-4 items-center navbaryfb">
+          <a href="#Projects">Projects</a>
+          <a href="#Experience">Experience</a>
+          <a href="#Education">Education</a>
+          <a href="#Skills">Skills</a>
+          <a href="#Contact">Contact</a>
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className="p-6 space-y-12">
@@ -116,7 +123,7 @@ export default function Home() {
         </section>
 
         <section className="border border-foreground p-6 relative">
-          <h2 className="text-3xl font-bold mb-4">PROJECTS</h2>
+          <h2 className="text-3xl font-bold mb-4" id="Projects">PROJECTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
@@ -131,7 +138,7 @@ export default function Home() {
         </section>
 
         <section className="border border-foreground p-6">
-          <h2 className="text-3xl font-bold mb-4">EXPERIENCE</h2>
+          <h2 className="text-3xl font-bold mb-4" id="Experience">EXPERIENCE</h2>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
               <div key={index} className="border border-foreground p-4">
@@ -146,7 +153,7 @@ export default function Home() {
         </section>
 
         <section className="border border-foreground p-6">
-          <h2 className="text-3xl font-bold mb-4">EDUCATION</h2>
+          <h2 className="text-3xl font-bold mb-4" id="Education">EDUCATION</h2>
           <div className="space-y-4">
             {education.map((edu, index) => (
               <div key={index} className="border border-foreground p-4">
@@ -160,7 +167,7 @@ export default function Home() {
         </section>
 
         <section className="border border-foreground p-6">
-          <h2 className="text-3xl font-bold mb-4">SKILLS</h2>
+          <h2 className="text-3xl font-bold mb-4" id="Skills">SKILLS</h2>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
               <span
@@ -174,7 +181,7 @@ export default function Home() {
         </section>
 
         <section className="border border-foreground p-6">
-          <h2 className="text-3xl font-bold mb-4">CONTACT ME</h2>
+          <h2 className="text-3xl font-bold mb-4" id="Contact">CONTACT ME</h2>
           <ContactForm /> 
         </section> 
       </main>
@@ -182,11 +189,14 @@ export default function Home() {
       <footer className="p-6 border-t border-foreground mt-6 flex justify-between items-center">
         <p>&copy; Youssef Fdil. All rights reserved.</p>
         <div className="flex space-x-4">
-          <a href="https://github.com/yousseffdil">
+          <a href="https://github.com/yousseffdil" target="_blank">
             <GitHub />
           </a>
-          <a href="https://www.linkedin.com/in/youssef-fdil-6b6497187">
+          <a href="https://www.linkedin.com/in/youssef-fdil-6b6497187" target="_blank">
             <Linkedin />
+          </a>
+          <a href="https://www.youtube.com/@YFB_Prod/videos" target="_blank">
+            <Youtube />
           </a>
         </div>
       </footer>
