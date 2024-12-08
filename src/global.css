@@ -84,3 +84,7 @@ form input, textarea {
   cursor: none;
   background-color: transparent !important;
 }
+
+.border-foreground {
+  border-color: var(--foreground) !important;
+}
