@@ -15,12 +15,16 @@ const projects = [
     name: "AI-Temperature Converter",
     image: "/public/projectss/IA.png",
     description: "An intelligent temperature converter using machine learning",
+    link: "#",
+
   },
   {
     name: "KineticSpheres",
     image: "/placeholder.svg?height=300&width=400",
     description:
       "A mesmerizing animation of kinetic spheres using react-three-fiber",
+    link: "#",
+
   },
 ];
 
@@ -131,7 +135,9 @@ export default function Home() {
                 key={project.name}
                 className="border border-foreground p-4 relative overflow-visible hover:shadow-lg"
               >
-                <ArrowUpRight className="absolute top-2 right-2" />
+                <a href={project.link}>
+                  <ArrowUpRight className="absolute top-2 right-2" />
+                </a>
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                 <p>{project.description}</p>
                 <GitHub className="mt-2"/>

@@ -77,8 +77,8 @@ export function SpaceScene() {
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     camera.position.x = radius * Math.cos(elapsedTime * speed);
-    camera.position.z = radius * Math.sin(elapsedTime * speed);
-    camera.position.y = height; 
+    camera.position.z = radius * Math.sin(elapsedTime * speed) / 2;
+    camera.position.y = height - 2; 
     camera.lookAt(0, 0, 0); 
   });
 
