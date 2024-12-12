@@ -3,12 +3,12 @@ import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
-import { GitHub, Linkedin, Youtube } from "react-feather";
+import { GitHub, Linkedin, Youtube, ArrowUpRight } from "react-feather";
 const projects = [
   {
     name: "Woordle Clone",
     image: "/placeholder.svg?height=300&width=400",
-    description: "A clone of the popular word game Wordle",
+    description: "A clone of the popular word game Wordle, built with javascript",
     link: "#",
   },
   {
@@ -123,17 +123,18 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         <section className="border border-foreground p-6 relative">
           <h2 className="text-3xl font-bold mb-4" id="Projects">PROJECTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="border border-foreground p-4 relative overflow-visible"
+                className="border border-foreground p-4 relative overflow-visible hover:shadow-lg"
               >
+                <ArrowUpRight className="absolute top-2 right-2" />
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                 <p>{project.description}</p>
+                <GitHub className="mt-2"/>
               </div>
             ))}
           </div>
