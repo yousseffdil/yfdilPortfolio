@@ -14,7 +14,6 @@ function Planet() {
         roughness={0.7}
         metalness={0.3}
         emissive={theme === "light" ? "#eb3434" : "#d0d0d0"}
-
       />
     </Sphere>
   );
@@ -51,7 +50,6 @@ function Asteroid({ position }: { position: [number, number, number] }) {
         roughness={0.8}
         metalness={0.2}
         emissive={theme === "light" ? "#eb8f34" : "#d0d0d0"}
-
       />
     </Sphere>
   );
@@ -60,26 +58,28 @@ function Asteroid({ position }: { position: [number, number, number] }) {
 export function SpaceScene() {
   const { camera } = useThree();
   const groupRef = useRef<THREE.Group>(null);
-  const radius = 5; // Radio de la órbita
+  const radius = 8; // Radio de la órbita
   const speed = 0.5; // Velocidad de rotación
-  const height = 2; // Altura fija de la cámara
+  const height = 3; // Altura fija de la cámara
 
-  const asteroidPositions = [
-    [2, 0, 0],
-    [-2, 1, 1],
-    [0, -1.5, 2],
-    [1.5, 1, -1.5],
-    [-2, -1, 1.5],
-    [-1, -1, -2],
-  ] as [number, number, number][];
+  const generateRandomAsteroids = (count: number) => {
+    const positions: [number, number, number][] = [];
+    for (let i = 0; i < count; i++) {
+      const x = (Math.random() - 0.5) * 10;
+      const y = (Math.random() - 0.5) * 10;
+      const z = (Math.random() - 0.5) * 10;
+      positions.push([x, y, z]);
+    }
+    return positions;
+  };
 
+  const asteroidPositions = generateRandomAsteroids(30);
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
-    // Calcula la posición de la cámara en un círculo horizontal
     camera.position.x = radius * Math.cos(elapsedTime * speed);
     camera.position.z = radius * Math.sin(elapsedTime * speed);
-    camera.position.y = height; // Mantén la altura constante
-    camera.lookAt(0, 0, 0); // Apunta siempre al centro de la escena
+    camera.position.y = height; 
+    camera.lookAt(0, 0, 0); 
   });
 
   return (
