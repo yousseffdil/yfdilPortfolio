@@ -49,7 +49,7 @@ function Asteroid({ position }: { position: [number, number, number] }) {
         color={theme === "light" ? "#eb8f34" : "#b0b0b0"}
         roughness={0.8}
         metalness={0.2}
-        emissive={theme === "light" ? "#eb8f34" : "#d0d0d0"}
+        emissive={theme === "light" ? "#3236a8" : "#d0d0d0"}
       />
     </Sphere>
   );
@@ -59,7 +59,7 @@ export function SpaceScene() {
   const { camera } = useThree();
   const groupRef = useRef<THREE.Group>(null);
   const radius = 8; // Radio de la órbita
-  const speed = 0.5; // Velocidad de rotación
+  const speed = 0.3; // Velocidad de rotación
   const height = 3; // Altura fija de la cámara
 
   const generateRandomAsteroids = (count: number) => {
@@ -73,7 +73,7 @@ export function SpaceScene() {
     return positions;
   };
 
-  const asteroidPositions = generateRandomAsteroids(30);
+  const asteroidPositions = generateRandomAsteroids(100);
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     camera.position.x = radius * Math.cos(elapsedTime * speed);
