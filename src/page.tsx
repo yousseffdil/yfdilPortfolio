@@ -39,11 +39,13 @@ const education = [
     degree: "SMR",
     institution: "INS Bosc de la coma",
     year: "2020-2022",
+    description: "Specialized in Linux and Windows server administration and networking, with virtualization and cloud computing.",
   },
   {
     degree: "Software DEvelopment",
     institution: "INS Bosc de la coma",
     year: "2022-2024",
+    description: "Specialized in software development, with a focus on multiplataform programs.",
   },
 ];
 
@@ -159,6 +161,7 @@ export default function Home() {
                 <p className="text-sm">
                   {edu.institution} | {edu.year}
                 </p>
+                <p className="mt-2">{edu.description}</p>
               </div>
             ))}
           </div>
