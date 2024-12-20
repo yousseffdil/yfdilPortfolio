@@ -84,7 +84,6 @@ export function SpaceScene() {
   const groupRef = useRef<THREE.Group>(null);
   const radius = 8; // Radio de la órbita
   const speed = 0.4; // Velocidad de rotación
-  const height = 3; // Altura fija de la cámara
 
   const generateRandomAsteroids = (count: number) => {
     const positions: [number, number, number][] = [];
@@ -102,10 +101,10 @@ export function SpaceScene() {
 
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
-    camera.position.x = radius * Math.cos(elapsedTime * speed);
-    camera.position.z = radius * Math.sin(elapsedTime * speed) / 2;
-    camera.position.y = height - 2;
-    camera.lookAt(0, 0, 0);
+    camera.position.x = radius * Math.cos(elapsedTime * speed) / 2;
+    camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.3;
+    camera.position.y = 1;
+    camera.lookAt(0, -1, 0);
   });
 
   return (
