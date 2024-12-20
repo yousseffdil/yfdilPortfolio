@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 export const metadata: Metadata = {
   title: "YOUSSEF FDIL | Portfolio",
@@ -17,6 +19,7 @@ export default function RootLayout({
     <ThemeProvider>
       {children}
       <Analytics />
+      <SpeedInsights/>
       <CustomCursor />
     </ThemeProvider>
   );
