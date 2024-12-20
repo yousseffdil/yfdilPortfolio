@@ -7,20 +7,17 @@ import { GitHub, Linkedin, Youtube, ArrowUpRight } from "react-feather";
 const projects = [
   {
     name: "Woordle Clone",
-    image: "/placeholder.svg?height=300&width=400",
     description: "A clone of the popular word game Wordle, built with javascript",
     link: "#",
   },
   {
     name: "AI-Temperature Converter",
-    image: "/public/projectss/IA.png",
     description: "An intelligent temperature converter using machine learning",
     link: "#",
 
   },
   {
     name: "KineticSpheres",
-    image: "/placeholder.svg?height=300&width=400",
     description:
       "A mesmerizing animation of kinetic spheres using react-three-fiber",
     link: "#",
