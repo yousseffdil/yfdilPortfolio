@@ -4,7 +4,6 @@ import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin, Youtube, ArrowUpRight } from "react-feather";
-import Scene from "./Components/playgroundthree";
 const projects = [
   {
     name: "Woordle Clone",
@@ -195,9 +194,6 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-4" id="Contact">CONTACT ME</h2>
           <ContactForm /> 
         </section>
-        <section className="border border-foreground p-6">
-            <Scene />
-        </section> 
       </main>
 
       <footer className="p-6 border-t border-foreground mt-6 flex justify-between items-center">
