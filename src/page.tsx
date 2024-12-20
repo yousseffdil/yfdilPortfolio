@@ -50,6 +50,7 @@ const education = [
   },
 ];
 
+
 const skills = [
   "JavaScript",
   "TypeScript",
