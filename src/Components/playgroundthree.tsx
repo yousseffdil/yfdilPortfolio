@@ -17,7 +17,7 @@ const Plane = () => {
 
 const InteractiveBox = () => {
   const boxRef = useRef<Mesh>(null);
-  const [ref, api] = useBox(() => ({
+  const [, api] = useBox(() => ({
     mass: 1,
     position: [0, 2, 0],
     args: [1, 1, 1],
