@@ -99,12 +99,13 @@ export function SpaceScene() {
 
   const asteroidPositions = generateRandomAsteroids(100);
   useFrame(({ clock }) => {
-    const elapsedTime = clock.getElapsedTime();
-    camera.position.x = radius * Math.cos(elapsedTime * speed);
-    camera.position.z = radius * Math.sin(elapsedTime * speed) / 2;
-    camera.position.y = height - 2; 
-    camera.lookAt(0, 0, 0); 
+      const elapsedTime = clock.getElapsedTime();
+      camera.position.x = radius * Math.cos(elapsedTime * speed);
+      camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.5;
+      camera.position.y = height - 2; 
+      camera.lookAt(0, 0, 0); 
   });
+
 
   return (
     <>

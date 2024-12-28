@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+button, a, input, textarea {
+  cursor: none !important;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -41,10 +44,18 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 100%;
 }
-.custom-cursor.pointer {
-  display: none;
+.custom-cursor.pointer::after{
+  width: 10px;
+  height: 10px;
+  background-color: #eb8f34;
+  border-radius: 100%;
 }
-
+.custom-cursor.pointer {
+  border-color: #ff5722 !important;
+  border-radius: 0;
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 0.75rem #ff5722);
+}
 .-button-style {
   background-color: var(--foreground);
   color: var(--background);
