@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Torus, Sphere } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -84,7 +84,6 @@ export function SpaceScene() {
   const groupRef = useRef<THREE.Group>(null);
   const radius = 8; // Radio de la órbita
   const speed = 0.4; // Velocidad de rotación
-  const height = 3; // Altura fija de la cámara
 
   const generateRandomAsteroids = (count: number) => {
     const positions: [number, number, number][] = [];
@@ -97,24 +96,22 @@ export function SpaceScene() {
     return positions;
   };
 
-  const asteroidPositions = generateRandomAsteroids(100);
+  // Memoize asteroid positions to generate them only once
+  const asteroidPositions = useMemo(() => generateRandomAsteroids(100), []);
+
   useFrame(({ clock }) => {
-      const elapsedTime = clock.getElapsedTime();
-      camera.position.x = radius * Math.cos(elapsedTime * speed);
-      camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.5;
-      camera.position.y = height - 2; 
-      camera.lookAt(0, 0, 0); 
+    const elapsedTime = clock.getElapsedTime();
+    camera.position.x = radius * Math.cos(elapsedTime * speed) / 2;
+    camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.3;
+    camera.position.y = 1;
+    camera.lookAt(0, -1, 0);
   });
 
 
   return (
     <>
       <OrbitControls enableZoom={false} enablePan={false} />
-    {
-      theme != "dark" && (
-        <ambientLight intensity={1.2} />
-      )
-    }
+      {theme !== "dark" && <ambientLight intensity={1.2} />}
       <pointLight position={[10, 10, 10]} intensity={1} />
       <group ref={groupRef}>
         <Planet />
@@ -124,18 +121,17 @@ export function SpaceScene() {
         ))}
       </group>
       <EffectComposer>
-        <>
-          {theme != "light" && (
-            <Bloom
-              intensity={0.8}
-              luminanceThreshold={0.1}
-              luminanceSmoothing={1}
-              height={300}
-            />
-          )}
-        </>
+        {theme !== "light" ? (
+          <Bloom
+            intensity={0.8}
+            luminanceThreshold={0.1}
+            luminanceSmoothing={1}
+            height={300}
+          />
+        ) : (
+          <></>
+        )}
       </EffectComposer>
     </>
   );
 }
-
