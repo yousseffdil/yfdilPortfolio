@@ -122,3 +122,8 @@ form input, textarea {
   display: inline-block;
   text-decoration: none; 
 }
+
+
+.maxWidth {
+  max-width: 85% !important;
+}

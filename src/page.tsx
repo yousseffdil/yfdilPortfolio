@@ -3,24 +3,25 @@ import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
-import { GitHub, Linkedin, Youtube, ArrowUpRight } from "react-feather";
+import { GitHub, Linkedin, Youtube, ArrowUpRight, Play, Pause } from "react-feather";
+import { useState } from "react";
 const projects = [
   {
     name: "Woordle Clone",
     description: "A clone of the popular word game Wordle, built with javascript",
-    link: "#",
+    link: "https://github.com/yousseffdil/Wordle-Clone",
   },
   {
     name: "AI-Temperature Converter",
     description: "An intelligent temperature converter using machine learning",
-    link: "#",
+    link: "https://github.com/yousseffdil/Convertidor_tensorflow",
 
   },
   {
     name: "KineticSpheres",
     description:
       "A mesmerizing animation of kinetic spheres using react-three-fiber",
-    link: "#",
+    link: "https://github.com/yousseffdil/KineticSphere",
 
   },
 ];
@@ -71,12 +72,14 @@ const skills = [
 ];
 
 export default function Home() {
+  const [activatedAnimation, setActivatedAnimation] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
       <header className="p-6 border-b border-foreground flex justify-between items-center">
-        <h1 className="text-4xl font-bold">Youssef Fdil</h1>
-        <div className="flex space-x-4 items-center navbaryfb">
+        <h1 className="text-xl font-bold">Youssef Fdil</h1>
+        <div className="grid grid-flow-col gap-4 items-center">
           <a href="#Projects">Projects</a>
           <a href="#Experience">Experience</a>
           <a href="#Education">Education</a>
@@ -86,7 +89,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="p-6 space-y-12">
+      <main className="p-6 space-y-12 mx-auto maxWidth">
         <section className="border border-foreground p-6">
           <h2 className="text-3xl font-bold mb-4">ABOUT ME</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -120,10 +123,16 @@ export default function Home() {
             </div>
             <div className="h-full w-full border border-foreground relaÇÑÉMEtive">
               <Canvas>
-                <SpaceScene/>
+                <SpaceScene activatedAnimation={activatedAnimation}/>
               </Canvas>
             </div>
           </div>
+          <div className="mt-3 relative flex justify-end items-center">
+              <button onClick={() => setActivatedAnimation(!activatedAnimation)} 
+              className="border border-foreground p-2 cursor-pointer">
+                {activatedAnimation ? <Pause /> : <Play />}
+              </button>
+            </div>
         </section>
         <section className="border border-foreground p-6 relative">
           <h2 className="text-3xl font-bold mb-4" id="Projects">PROJECTS</h2>
@@ -133,7 +142,7 @@ export default function Home() {
                 key={project.name}
                 className="border border-foreground p-4 relative overflow-visible hover:shadow-lg"
               >
-                <a href={project.link}>
+                <a href={project.link} target="_blank">
                   <ArrowUpRight className="absolute top-2 right-2" />
                 </a>
                 <h3 className="text-xl font-bold mb-2">{project.name}</h3>

@@ -78,7 +78,7 @@ function Asteroid({ position }: { position: [number, number, number] }) {
   );
 }
 
-export function SpaceScene() {
+export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) {
   const { theme } = useTheme();
   const { camera } = useThree();
   const groupRef = useRef<THREE.Group>(null);
@@ -100,11 +100,13 @@ export function SpaceScene() {
   const asteroidPositions = useMemo(() => generateRandomAsteroids(100), []);
 
   useFrame(({ clock }) => {
-    const elapsedTime = clock.getElapsedTime();
-    camera.position.x = radius * Math.cos(elapsedTime * speed) / 2;
-    camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.3;
-    camera.position.y = 1;
-    camera.lookAt(0, -1, 0);
+    if(activatedAnimation){
+      const elapsedTime = clock.getElapsedTime();
+      camera.position.x = radius * Math.cos(elapsedTime * speed) / 2;
+      camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.3;
+      camera.position.y = 1;
+      camera.lookAt(0, -1, 0);
+    }
   });
 
 
