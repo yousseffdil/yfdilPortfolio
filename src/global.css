@@ -122,3 +122,6 @@ form input, textarea {
   display: inline-block;
   text-decoration: none; 
 }
+label{
+  cursor: none;
+}

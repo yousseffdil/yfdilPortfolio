@@ -106,6 +106,8 @@ export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) 
       camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.3;
       camera.position.y = 1;
       camera.lookAt(0, -1, 0);
+    }else{
+      camera.lookAt(0, -1, 0);
     }
   });
 
