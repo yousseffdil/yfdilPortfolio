@@ -119,7 +119,7 @@ export default function Home() {
                 <br></br>
                 <br></br>
                 These creative hobbies help me stay sharp and always ready to
-                learn something new!<br></br>
+                learn something new! 
                 <br></br>
                 <br></br>
                 Beyond my technical skills, I'm always looking for ways to
@@ -133,7 +133,7 @@ export default function Home() {
                 amazing together!
               </p>
             </div>
-            <div className="h-full w-full border border-foreground relaÇÑÉMEtive">
+            <div className="h-25 w-full border border-foreground ">
               <Canvas>
                 <SpaceScene activatedAnimation={activatedAnimation}/>
               </Canvas>
@@ -152,9 +152,9 @@ export default function Home() {
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="border border-foreground p-4 relative overflow-visible hover:shadow-lg"
+                className="border border-foreground p-4 relative overflow-visible w-full"
               >
-                <div className="flex flex-col h-full justify-between"
+                <div className="flex flex-col h-full justify-between hovered"
                   onClick={() => window.open(project.link, "_blank")}
                 >
                   <h3 className="text-xl font-bold mb-2">{project.name}</h3>

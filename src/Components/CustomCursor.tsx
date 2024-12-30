@@ -13,9 +13,10 @@ export function CustomCursor() {
 
     const updateCursorType = (e: MouseEvent) => {
       const target = e.target as HTMLElement
-      const isInteractive = ['A', 'BUTTON', 'INPUT', 'CANVAS', 'LABEL', 'svg', 'path'].includes(target.tagName) || 
+      const isInteractive = ['A', 'BUTTON', 'INPUT', 'CANVAS', 'LABEL', 'svg'].includes(target.tagName) || 
                             target.hasAttribute('data-cursor-pointer') || 
-                            target.classList.contains('cursor-pointer')
+                            target.classList.contains('cursor-pointer') ||
+                            target.classList.contains('hovered')
       setIsPointer(isInteractive)
     }
 

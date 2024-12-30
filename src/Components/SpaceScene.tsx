@@ -10,7 +10,7 @@ function Planet() {
 
   return (
     <group>
-      <Sphere args={[1, 10, 10]}>
+      <Sphere args={[1, 15, 15]}>
         <meshStandardMaterial
           color={theme === "light" ? "#eb3434" : "#e0e0e0"}
           emissive={theme === "light" ? "#eb3434" : "#d0d0d0"}
