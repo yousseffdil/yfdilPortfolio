@@ -10,17 +10,11 @@ function Planet() {
 
   return (
     <group>
-      <Sphere args={[1, 32, 32]}>
+      <Sphere args={[1, 10, 10]}>
         <meshStandardMaterial
           color={theme === "light" ? "#eb3434" : "#e0e0e0"}
           emissive={theme === "light" ? "#eb3434" : "#d0d0d0"}
-          emissiveIntensity={0.5}
-        />
-      </Sphere>
-      <Sphere args={[1.05, 32, 32]}>
-        <meshBasicMaterial
-          color={theme === "light" ? "#000000" : "#ffffff"}
-          side={THREE.BackSide}
+          emissiveIntensity={1}
         />
       </Sphere>
     </group>
@@ -39,17 +33,11 @@ function PlanetRings() {
 
   return (
     <group ref={ringRef}>
-      <Torus args={[1.5, 0.1, 16, 100]}>
+      <Torus args={[1.5, 0.1, 16, 50]}>
         <meshStandardMaterial
           color={theme === "light" ? "#2a2a2a" : "#d0d0d0"}
           emissive={theme === "light" ? "#2a2a2a" : "#d0d0d0"}
-          emissiveIntensity={0.5}
-        />
-      </Torus>
-      <Torus args={[1.5, 0.12, 16, 100]}>
-        <meshBasicMaterial
-          color={theme === "light" ? "#000000" : "#ffffff"}
-          side={THREE.BackSide}
+          emissiveIntensity={1}
         />
       </Torus>
     </group>
@@ -61,17 +49,11 @@ function Asteroid({ position }: { position: [number, number, number] }) {
 
   return (
     <group position={position}>
-      <Sphere args={[0.1, 16, 16]}>
+      <Sphere args={[0.1, 10, 10]}>
         <meshStandardMaterial
           color={theme === "light" ? "#eb8f34" : "#b0b0b0"}
           emissive={theme === "light" ? "#eb8f34" : "#d0d0d0"}
-          emissiveIntensity={0.5}
-        />
-      </Sphere>
-      <Sphere args={[0.11, 16, 16]}>
-        <meshBasicMaterial
-          color={theme === "light" ? "#000000" : "#ffffff"}
-          side={THREE.BackSide}
+          emissiveIntensity={1}
         />
       </Sphere>
     </group>
@@ -124,16 +106,12 @@ export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) 
         ))}
       </group>
       <EffectComposer>
-        {theme !== "light" ? (
-          <Bloom
-            intensity={0.8}
+        <Bloom
+            intensity={0.4}
             luminanceThreshold={0.1}
             luminanceSmoothing={1}
             height={300}
           />
-        ) : (
-          <></>
-        )}
       </EffectComposer>
     </>
   );
