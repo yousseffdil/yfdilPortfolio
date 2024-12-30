@@ -5,6 +5,7 @@ import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin, Youtube, Play, Pause } from "react-feather";
 import { useState } from "react";
+import GitHubLanguagesRadar from "./Components/GitHubLanguagesRadar";
 const projects = [
   {
     name: "Woordle Clone",
@@ -208,8 +209,19 @@ export default function Home() {
               </span>
             ))}
           </div>
-        </section>
 
+        </section>
+          <section className="border border-foreground p-6 ">
+            <h2 className="text-3xl font-bold mb-4">LANGUAGES</h2>
+            <div className="flex flex-row justify-between gap-4">
+              <div>
+                <p>In this chart displays the programming languages I use most frequently in my <strong>GITHUB PROJECTS!!</strong></p>
+              </div>
+              <div style={{ width: '500px', height: '500px', margin: '0 auto' }}>
+                <GitHubLanguagesRadar />
+              </div>
+            </div>
+          </section>
         <section className="border border-foreground p-6">
           <h2 className="text-3xl font-bold mb-4" id="Contact">CONTACT ME</h2>
           <ContactForm /> 
