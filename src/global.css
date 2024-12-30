@@ -52,9 +52,7 @@ body {
 }
 .custom-cursor.pointer {
   border-color: #ff5722 !important;
-  border-radius: 0;
   transform: scale(1.5);
-  filter: drop-shadow(0 0 0.75rem #ff5722);
 }
 .-button-style {
   background-color: var(--foreground);

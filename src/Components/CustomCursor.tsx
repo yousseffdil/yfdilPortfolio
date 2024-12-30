@@ -36,6 +36,6 @@ export function CustomCursor() {
         top: `${position.y}px`,
         borderColor: theme === 'dark' ? '#ffffff' : '#000000'
       }}
-    />
+      />
   )
 }
