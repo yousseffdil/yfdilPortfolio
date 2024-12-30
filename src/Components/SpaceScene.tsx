@@ -96,14 +96,13 @@ export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) 
     return positions;
   };
 
-  // Memoize asteroid positions to generate them only once
   const asteroidPositions = useMemo(() => generateRandomAsteroids(100), []);
 
   useFrame(({ clock }) => {
     if(activatedAnimation){
       const elapsedTime = clock.getElapsedTime();
-      camera.position.x = radius * Math.cos(elapsedTime * speed) / 2;
-      camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.3;
+      camera.position.x = radius * Math.cos(elapsedTime * speed) / 1.5;
+      camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.8;
       camera.position.y = 1;
       camera.lookAt(0, -1, 0);
     }else{
