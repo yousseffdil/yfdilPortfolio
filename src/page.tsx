@@ -212,6 +212,19 @@ export default function Home() {
               SKILLS
             </h2>
             <div className="flex flex-wrap gap-2">
+              <div className="flex flex-row justify-between gap-4">
+                <div>
+                  <p>
+                    In this chart displays the programming languages I use most
+                    frequently in my <strong>GITHUB PROJECTS!!</strong>
+                  </p>
+                </div>
+                <div
+                  style={{ width: "500px", height: "500px", margin: "0 auto" }}
+                >
+                  <GitHubLanguagesRadar />
+                </div>
+              </div>
               {skills.map((skill) => (
                 <span
                   key={skill}
@@ -220,20 +233,6 @@ export default function Home() {
                   {skill}
                 </span>
               ))}
-              <div className="flex flex-row justify-between gap-4 mt-10">
-              <div>
-                <p>
-                  In this chart displays the programming languages I use most
-                  frequently in my <strong>GITHUB PROJECTS!!</strong>
-                </p>
-              </div>
-              <div
-                style={{ width: "500px", height: "500px", margin: "0 auto" }}
-              >
-                <GitHubLanguagesRadar />
-              </div>
-              </div>
-              
             </div>
           </section>
           <section className="border border-foreground p-6">
