@@ -3,4 +3,5 @@
 - Add a contact section ✅
 - Preformance optimization: Optimize the performance of the website. ✅
 - Create an accont in EmailJS: Create an account in EmailJS and configure the contact form. ✅
-- improve the responsive ⌚
+- improve the responsive ✅
+- Show the most lenguages i use in github using a radar chart
