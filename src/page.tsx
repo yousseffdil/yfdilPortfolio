@@ -3,7 +3,7 @@ import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
-import { GitHub, Linkedin, Youtube, ArrowUpRight, Play, Pause } from "react-feather";
+import { GitHub, Linkedin, Youtube, Play, Pause } from "react-feather";
 import { useState } from "react";
 const projects = [
   {
