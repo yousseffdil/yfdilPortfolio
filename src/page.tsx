@@ -220,11 +220,7 @@ export default function Home() {
                   {skill}
                 </span>
               ))}
-            </div>
-          </section>
-          <section className="border border-foreground p-6 ">
-            <h2 className="text-3xl font-bold mb-4">LANGUAGES</h2>
-            <div className="flex flex-row justify-between gap-4">
+              <div className="flex flex-row justify-between gap-4 mt-10">
               <div>
                 <p>
                   In this chart displays the programming languages I use most
@@ -236,6 +232,8 @@ export default function Home() {
               >
                 <GitHubLanguagesRadar />
               </div>
+              </div>
+              
             </div>
           </section>
           <section className="border border-foreground p-6">
