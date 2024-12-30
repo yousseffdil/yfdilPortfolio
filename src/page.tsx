@@ -154,12 +154,13 @@ export default function Home() {
                 key={project.name}
                 className="border border-foreground p-4 relative overflow-visible hover:shadow-lg"
               >
-                <a href={project.link} target="_blank">
-                  <ArrowUpRight className="absolute top-2 right-2" />
-                </a>
-                <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                <p>{project.description}</p>
-                <GitHub className="mt-2"/>
+                <div className="flex flex-col h-full justify-between"
+                  onClick={() => window.open(project.link, "_blank")}
+                >
+                  <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+                  <p>{project.description}</p>
+                  <GitHub className="mt-2 "/>
+                </div>
               </div>
             ))}
           </div>
