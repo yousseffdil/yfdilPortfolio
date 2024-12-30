@@ -72,24 +72,36 @@ const skills = [
 ];
 
 export default function Home() {
-  const [activatedAnimation, setActivatedAnimation] = useState(false);
+  const [activatedAnimation, setActivatedAnimation] = useState(true);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
-      <header className="p-6 border-b border-foreground flex justify-between items-center">
+      <header className="p-4 border-b border-foreground flex flex-wrap justify-between items-center gap-4">
         <h1 className="text-xl font-bold">Youssef Fdil</h1>
-        <div className="grid grid-flow-col gap-4 items-center">
+        <nav className="hidden md:flex gap-4 items-center">
           <a href="#Projects">Projects</a>
           <a href="#Experience">Experience</a>
           <a href="#Education">Education</a>
           <a href="#Skills">Skills</a>
           <a href="#Contact">Contact</a>
           <ThemeToggle />
+        </nav>
+        <div className="md:hidden">
+          <details>
+            <summary className="cursor-pointer">☰ Menu</summary>
+            <nav className="flex flex-col gap-2 mt-2">
+              <a href="#Projects">Projects</a>
+              <a href="#Experience">Experience</a>
+              <a href="#Education">Education</a>
+              <a href="#Skills">Skills</a>
+              <a href="#Contact">Contact</a>
+              <ThemeToggle />
+            </nav>
+          </details>
         </div>
       </header>
-
-      <main className="p-6 space-y-12 mx-auto maxWidth">
+      <main className="p-6 space-y-12 mx-auto max-w-5xl">
         <section className="border border-foreground p-6">
           <h2 className="text-3xl font-bold mb-4">ABOUT ME</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
