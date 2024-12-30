@@ -47,7 +47,7 @@ const education = [
     degree: "Software DEvelopment",
     institution: "INS Bosc de la coma",
     year: "2022-2024",
-    description: "Specialized in software development, with a focus on multiplataform programs.",
+    description: "Specialized in software development, focusing on multiplatform applications.",
   },
 ];
 
