@@ -21,13 +21,13 @@ function Planet() {
   );
 }
 
-function PlanetRings() {
+function PlanetRings({RotationValue} : {RotationValue: number}) {
   const { theme } = useTheme();
   const ringRef = useRef<THREE.Group>(null);
 
   useFrame(() => {
     if (ringRef.current) {
-      ringRef.current.rotation.x = Math.PI / 2; // Rotate 90 degrees
+      ringRef.current.rotation.x = RotationValue; // Rotate 90 degrees
     }
   });
 
@@ -100,7 +100,7 @@ export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) 
       <pointLight position={[10, 10, 10]} intensity={1} />
       <group ref={groupRef}>
         <Planet />
-        <PlanetRings />
+        <PlanetRings RotationValue={Math.PI / 2}/>
         {asteroidPositions.map((position, index) => (
           <Asteroid key={index} position={position} />
         ))}
