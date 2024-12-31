@@ -44,33 +44,25 @@ export default function Home() {
           <section className="border border-foreground p-6">
             <h2 className="text-3xl font-bold mb-4">ABOUT ME</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <p className="mb-4">
-                  Hi there! I'm currently pursuing a Bachelor's degree in
-                  Computer Engineering from Spain, with a strong passion for
-                  programming and design. I'm proficient in several programming
-                  languages , and I also have hands-on experience with UI/UX
-                  design tools like Figma and Adobe XD.
-                  <br></br>
-                  <br></br>
-                  In my free time, I love editing videos and creating 3D renders
-                  using software like Blender & i love make music
-                  <br></br>
-                  <br></br>
-                  These creative hobbies help me stay sharp and always ready to
-                  learn something new!
-                  <br></br>
-                  <br></br>
-                  Beyond my technical skills, I'm always looking for ways to
-                  grow—whether it's through solving coding challenges or
-                  perfecting a design. Every project, big or small, is a chance
-                  to learn and innovate.
-                  <br></br>
-                  <br></br>
-                  I'm excited to apply my skills in the dynamic fields of
-                  software development and design. Let's connect and create
-                  something amazing together!
-                </p>
+              <div className="leading-relaxed text-sm">
+              <p>
+              Hi there! I'm currently pursuing a Bachelor's degree in Computer Engineering from Spain, with a strong passion for programming and design. 
+              </p>
+              <p className="mb-2">
+              I'm proficient in several programming languages, and 
+              I also have hands-on experience with UI/UX design tools like Figma and Adobe XD.
+              </p>
+              <p className="mb-2">
+              In my free time, I love editing videos and creating 3D renders using software like Blender & i love make music
+              These creative hobbies help me stay sharp and always ready to learn something new! 
+              </p>
+              <p className="mb-2">
+                These creative hobbies help me stay sharp and always ready to learn something new!
+              </p>
+              <p className="mb-2">
+                Beyond my technical skills, I'm always looking for ways to grow—whether it's through solving coding challenges or perfecting a design. Every project, big or small, is a chance to learn and innovate.              </p>
+              <p>
+                I'm excited to apply my skills in the dynamic fields of software development and design. Let's connect and create something amazing together!              </p>
               </div>
               <div className="h-25 w-full border border-foreground ">
                 <Canvas>
