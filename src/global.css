@@ -22,7 +22,14 @@ html{
   --mouse : white;
   --whele : white;
 }
-
+section{
+  background-color: var(--background);
+}
+section:nth-of-type(3),
+section:nth-of-type(5){
+  position: relative;
+  z-index: -2;
+}
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -158,6 +165,9 @@ summary{
   border-radius: 15%;
 
 }
+
+
+
 @keyframes easeInOut {
   0% {
     transform: translate3d(0, 0, 0);
