@@ -13,25 +13,25 @@ import { AnimatedCube } from "./Components/AnimatedCube";
 
 export default function Home() {
   const [activatedAnimation, setActivatedAnimation] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  // const [scrollProgress, setScrollProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollProgress(
-        window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)
-      );
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollProgress(
+  //       window.scrollY /
+  //         (document.documentElement.scrollHeight - window.innerHeight)
+  //     );
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
-      <AnimatedCube scrollProgress={scrollProgress} />
+      {/* <AnimatedCube scrollProgress={scrollProgress} /> */}
       <div className="relative">
         <header className="p-4 border-b border-foreground flex flex-wrap justify-between items-center gap-4">
           <h1 className="text-xl font-bold">Youssef Fdil</h1>

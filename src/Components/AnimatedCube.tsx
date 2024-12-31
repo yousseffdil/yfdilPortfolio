@@ -19,11 +19,11 @@ function BoxShow({ scrollProgress }: { scrollProgress: number }) {
       -2,
       Math.pow(scrollProgress, 2)
     );
-
     mesh.current.rotation.x =
       Math.sin(Math.pow(scrollProgress, 2) * Math.PI * 2) * Math.PI * 0.5;
     mesh.current.rotation.y =
       Math.cos(Math.pow(scrollProgress, 2) * Math.PI * 2) * Math.PI * 0.5;
+
   });
   return (
     <mesh ref={mesh}>
