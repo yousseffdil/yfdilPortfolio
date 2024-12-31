@@ -34,7 +34,7 @@ function Model({ scrollProgress }: { scrollProgress: number }) {
     if (modelRef.current) {
       modelRef.current.position.x = Math.sin(scrollProgress * Math.PI * 2) * 3;
       modelRef.current.position.y = Math.sin(scrollProgress * Math.PI);
-      modelRef.current.rotation.y = scrollProgress * Math.PI * 2;
+      modelRef.current.rotation.y = scrollProgress * Math.PI * 2 - 1.65;
       modelRef.current.rotation.x = scrollProgress * Math.PI * 2;
     }
   });
