@@ -179,3 +179,61 @@ summary{
     transform: translate3d(0, 0, 0);
   }
 }
+
+
+.blobText{
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--foreground);
+  color: var(--background);
+  height: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  border-radius: 20px;
+  animation: fadein 1s ease-in;
+}
+.blobText::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--foreground);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+}
+
+.Duck{
+  top: 60%;
+  right: 40px;
+  animation: duck 2s ease-in-out infinite;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  position: absolute;
+  animation: fadein 1s ease-in;
+
+}
+.Duck Canvas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadein 1s ease-in;
+
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
