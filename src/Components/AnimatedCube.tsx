@@ -101,7 +101,6 @@ export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
       clearTimeout(timeoutRef.current);
     }
     timeoutRef.current = setTimeout(() => {
-      console.log("0");
       setClicks(0); 
     }, 3000); 
   };

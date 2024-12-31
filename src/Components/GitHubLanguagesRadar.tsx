@@ -22,7 +22,6 @@ const GitHubLanguagesRadar = () => {
             langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
           }
         }
-        console.log(langCounts);
         setLanguages(langCounts);
       } catch (error) {
         console.error('Error fetching GitHub languages:', error);

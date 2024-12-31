@@ -22,11 +22,10 @@ export function ContactForm() {
         )
         .then(
           () => {
-            console.log("Email sent successfully");
             setIsSubmitting(false)
           },
           (error) => {
-            console.error("Email send failed:", error);
+            // eslint-disable-next-line no-console
           }
         );
     }
