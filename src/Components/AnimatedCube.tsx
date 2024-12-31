@@ -33,16 +33,13 @@ function Model({ scrollProgress, setScale }: { scrollProgress: number; setScale:
   useFrame((_, delta) => {
     if (modelRef.current) {
       if (scrollProgress === 1) {
-        // Rotación sobre su eje Y
         modelRef.current.rotation.y += delta * 2;
         modelRef.current.rotation.z = -0.1;
 
-        // Ajustar escala si no está controlado por setScale
         if (!setScale) {
           modelRef.current.scale.set(2, 2, 2);
         }
       } else {
-        // Restablecer valores cuando scrollProgress no es 1
         modelRef.current.position.set(0, 0, -10);
         modelRef.current.rotation.y = 0;
         modelRef.current.scale.set(0, 0, 0);
@@ -84,7 +81,7 @@ function BlobText({ scrollProgress, textToDisplay }: { scrollProgress: number, t
     <div style={{ zIndex: 100 }}>
       {showText ? (
         <div className="blobText" style={{zIndex: 1, top: "55%", left: "92%", transform: "translate(-50%, -50%)", bottom: "0", position: "fixed"}}>
-          {textToDisplay === "Cuack + 0" ? <h2>Click me!</h2> : <><h2>{textToDisplay}</h2></>}
+          {textToDisplay === "Cuack + 0" ? <h2>👈 CONTACT WITH ME 🦆</h2> : <><h2>{textToDisplay}</h2></>}
         </div>
       ) : <></>}
     </div>
@@ -96,29 +93,25 @@ export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
   const [stateScale, setStateScale] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Función para reiniciar el temporizador
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
     timeoutRef.current = setTimeout(() => {
-      console.log("0"); // Puedes enviar este valor a un backend o manejarlo como necesites
-      setClicks(0); // Reinicia el contador de clics si es necesario
-    }, 3000); // 3 segundos
+      console.log("0");
+      setClicks(0); 
+    }, 3000); 
   };
 
-  // Manejador de clics
   const handleClick = () => {
     setClicks((prev) => prev + 1);
     resetTimeout();
   };
 
   useEffect(() => {
-    // Iniciar temporizador en el montaje
     resetTimeout();
 
     return () => {
-      // Limpiar el temporizador en el desmontaje
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
