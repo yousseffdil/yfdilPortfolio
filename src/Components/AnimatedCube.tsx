@@ -1,47 +1,85 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-// Componente para el modelo GLTF
+import { useGLTF } from "@react-three/drei";
+
 function Model({ scrollProgress }: { scrollProgress: number }) {
-  const modelRef = useRef<THREE.Mesh>(null!);
+  const modelRef = useRef<THREE.Group>(null!);
+  const { scene } = useGLTF("/duck.glb");
+  const color = "#ffffff";
+
+  useEffect(() => {
+    if (scene) {
+      scene.traverse((child) => {
+        if (child instanceof THREE.Mesh && child.material) {
+          // Ajuste de materiales para mayor calidad
+          if (Array.isArray(child.material)) {
+            child.material.forEach((mat) => {
+              mat.color.set(color);
+              mat.roughness = 0.2; // Superficie más suave
+              mat.metalness = 0.8; // Más reflectivo
+              mat.needsUpdate = true;
+            });
+          } else {
+            child.material.color.set(color);
+            child.material.roughness = 0.2;
+            child.material.metalness = 0.8;
+            child.material.needsUpdate = true;
+          }
+
+          // Habilitar sombras si el objeto lo soporta
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+    }
+  }, [scene]);
 
   useFrame(() => {
     if (modelRef.current) {
-      modelRef.current.position.x = THREE.MathUtils.lerp(
-        8,
-        -8,
-        Math.pow(scrollProgress, 2)
-      );
-      modelRef.current.position.y = THREE.MathUtils.lerp(
-        2,
-        -2,
-        Math.pow(scrollProgress, 2)
-      );
-      modelRef.current.rotation.x =
-        Math.sin(Math.pow(scrollProgress, 2) * Math.PI * 2) * Math.PI * 0.5;
-      modelRef.current.rotation.y =
-        Math.cos(Math.pow(scrollProgress, 2) * Math.PI * 2) * Math.PI * 0.5;
+      modelRef.current.position.x = Math.sin(scrollProgress * Math.PI * 2) * 3;
+      modelRef.current.position.y = Math.sin(scrollProgress * Math.PI);
+      modelRef.current.rotation.y = scrollProgress * Math.PI * 2;
+      modelRef.current.rotation.x = scrollProgress * Math.PI * 2;
     }
   });
 
-  return (
-    <mesh ref={modelRef} scale={[1, 1, 1]}>
-      <boxGeometry args={[1, 1, 1]} />
-    </mesh>
-  );
+  return <primitive object={scene} ref={modelRef} scale={[0.2, 0.2, 0.2]} />;
 }
 
-// Componente principal
-export function AnimatedCube({ scrollProgress }: { scrollProgress: number }) {
+export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
   return (
-    <div
-      style={{ height: "200vh", position: "fixed", width: "100%", zIndex: -1 }}
-    >
-      <Canvas style={{ height: "100vh" }}>
-        <perspectiveCamera position={[0, 0, 5]} />
+    <div style={{ height: "100vh", width: "100%", position: "fixed" }}>
+      <Canvas
+        dpr={[1, 2]} 
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        gl={{
+          antialias: true,
+          toneMapping: THREE.ACESFilmicToneMapping,
+          outputColorSpace: THREE.SRGBColorSpace,
+        }}
+      >
+        {/* Iluminación de alta calidad */}
         <ambientLight intensity={1} />
-        <pointLight position={[10, 10, 10]} />
+        <directionalLight
+          position={[5, 10, 5]}
+          intensity={1.5}
+          shadow-mapSize-width={2048} // Aumentar resolución de sombra
+          shadow-mapSize-height={2048}
+        />
+        <spotLight
+          intensity={1}
+          angle={0.3}
+          penumbra={1}
+          position={[10, 15, 10]}
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
         <Model scrollProgress={scrollProgress} />
+        <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]}>
+          <planeGeometry args={[10, 10]} />
+          <shadowMaterial opacity={0.4} />
+        </mesh>
       </Canvas>
     </div>
   );

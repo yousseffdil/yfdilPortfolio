@@ -9,7 +9,7 @@ import { skills } from "./data/skills";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import { education } from "./data/education";
-import { AnimatedCube } from "./Components/AnimatedCube";
+import { EnhancedScene } from "./Components/AnimatedCube";
 
 export default function Home() {
   const [activatedAnimation, setActivatedAnimation] = useState(true);
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
-      <AnimatedCube scrollProgress={scrollProgress} />
+      <EnhancedScene scrollProgress={scrollProgress} />
       <div className="relative">
         <header className="p-4 border-b border-foreground flex flex-wrap justify-between items-center gap-4">
           <h1 className="text-xl font-bold">Youssef Fdil</h1>
