@@ -38,7 +38,7 @@ const GitHubLanguagesRadar = () => {
       {
         label: 'Most Used Languages',
         data: Object.values(languages),
-        backgroundColor: theme === 'dark' ? 'rgba(52, 143, 235, 0.2)' : 'rgba(235, 143, 52, 0.2)',
+        backgroundColor: theme === 'dark' ? 'rgba(52, 144, 235, 0.24)' : 'rgba(235, 143, 52, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(52, 143, 235, 1)' : 'rgba(235, 143, 52, 1)',
         borderWidth: 1,
       },
