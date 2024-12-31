@@ -15,19 +15,16 @@ function Model({ scrollProgress }: { scrollProgress: number }) {
           if (Array.isArray(child.material)) {
             child.material.forEach((mat) => {
               mat.color.set(color);
-              mat.roughness = 0.2; 
-              mat.metalness = 0.8; 
+              mat.roughness = 0; 
+              mat.metalness = 0; 
               mat.needsUpdate = true;
             });
           } else {
             child.material.color.set(color);
-            child.material.roughness = 0.2;
-            child.material.metalness = 0.8;
+            child.material.roughness = 0;
+            child.material.metalness = 0;
             child.material.needsUpdate = true;
           }
-
-          child.castShadow = true;
-          child.receiveShadow = true;
         }
       });
     }
