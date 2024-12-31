@@ -99,8 +99,8 @@ export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) 
       {theme !== "dark" && <ambientLight intensity={1.2} />}
       <pointLight position={[10, 10, 10]} intensity={1} />
       <group ref={groupRef}>
-        <Planet />
-        <PlanetRings RotationValue={Math.PI / 2}/>
+        {/* <Planet /> */}
+        {/* <PlanetRings RotationValue={Math.PI / 2}/> */}
         {asteroidPositions.map((position, index) => (
           <Asteroid key={index} position={position} />
         ))}

@@ -25,6 +25,7 @@ html{
 section{
   background-color: var(--background);
 }
+section:nth-of-type(1),
 section:nth-of-type(3),
 section:nth-of-type(5){
   position: relative;

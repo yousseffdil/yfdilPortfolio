@@ -1,9 +1,12 @@
 import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { useTheme } from "../context/ThemeContext";
+import { Sphere, Torus } from "@react-three/drei";
 
 function BoxShow({ scrollProgress }: { scrollProgress: number }) {
   const mesh = useRef<THREE.Mesh>(null!);
+  const { theme } = useTheme();
 
   useFrame(() => {
     mesh.current.position.x = THREE.MathUtils.lerp(
@@ -22,11 +25,26 @@ function BoxShow({ scrollProgress }: { scrollProgress: number }) {
     mesh.current.rotation.y =
       Math.cos(Math.pow(scrollProgress, 2) * Math.PI * 2) * Math.PI * 0.5;
   });
-
   return (
-    <mesh ref={mesh} position={[5, 2, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"#eb3434"} emissive={"#eb3434"}  />
+    <mesh ref={mesh}>
+      <Sphere args={[0.3, 15, 15]} position={[0, 0, 1]}>
+        <meshStandardMaterial
+          color={theme === "light" ? "#eb3434" : "#e0e0e0"}
+          emissive={theme === "light" ? "#eb3434" : "#d0d0d0"}
+          emissiveIntensity={1}
+        />
+      </Sphere>
+      <Torus
+        args={[0.5, 0.05, 16, 50]}
+        rotation={[Math.PI / 2, 0, 0]}
+        position={[0, 0, 1]}
+      >
+        <meshStandardMaterial
+          color={theme === "light" ? "#2a2a2a" : "#d0d0d0"}
+          emissive={theme === "light" ? "#2a2a2a" : "#d0d0d0"}
+          emissiveIntensity={1}
+        />
+      </Torus>
     </mesh>
   );
 }
