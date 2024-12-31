@@ -81,7 +81,10 @@ function BlobText({ scrollProgress, textToDisplay }: { scrollProgress: number, t
     <div style={{ zIndex: 100 }}>
       {showText ? (
         <div className="blobText" style={{zIndex: 1, top: "55%", left: "92%", transform: "translate(-50%, -50%)", bottom: "0", position: "fixed"}}>
-          {textToDisplay === "Cuack + 0" ? <h2>👈 CONTACT WITH ME 🦆</h2> : <><h2>{textToDisplay}</h2></>}
+          {textToDisplay === "Cuack + 0" ? 
+            <h2>👈 CUACK WITH ME 🦆</h2> : 
+            <><h2>{textToDisplay}</h2></>
+          }
         </div>
       ) : <></>}
     </div>
