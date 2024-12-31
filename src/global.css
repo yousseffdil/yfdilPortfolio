@@ -22,7 +22,9 @@ html{
   --mouse : white;
   --whele : white;
 }
-
+section{
+  background-color: var(--background);
+}
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -155,9 +157,11 @@ summary{
   background-color: var(--whele);
   width: 25%;
   height: 30%;
-  border-radius: 50%;
-
+  border-radius: 10%;
 }
+
+
+
 @keyframes easeInOut {
   0% {
     transform: translate3d(0, 0, 0);

@@ -4,17 +4,34 @@ import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin, Youtube, Play, Pause } from "react-feather";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { skills } from "./data/skills";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import { education } from "./data/education";
+import { AnimatedCube } from "./Components/AnimatedCube";
 
 export default function Home() {
   const [activatedAnimation, setActivatedAnimation] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollProgress(
+        window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)
+      );
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
+      <AnimatedCube scrollProgress={scrollProgress} />
       <div className="relative">
         <header className="p-4 border-b border-foreground flex flex-wrap justify-between items-center gap-4">
           <h1 className="text-xl font-bold">Youssef Fdil</h1>
@@ -45,24 +62,37 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4">ABOUT ME</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="leading-relaxed text-sm">
-              <p>
-              Hi there! I'm currently pursuing a Bachelor's degree in Computer Engineering from Spain, with a strong passion for programming and design. 
-              </p>
-              <p className="mb-2">
-              I'm proficient in several programming languages, and 
-              I also have hands-on experience with UI/UX design tools like Figma and Adobe XD.
-              </p>
-              <p className="mb-2">
-              In my free time, I love editing videos and creating 3D renders using software like Blender & i love make music
-              These creative hobbies help me stay sharp and always ready to learn something new! 
-              </p>
-              <p className="mb-2">
-                These creative hobbies help me stay sharp and always ready to learn something new!
-              </p>
-              <p className="mb-2">
-                Beyond my technical skills, I'm always looking for ways to grow—whether it's through solving coding challenges or perfecting a design. Every project, big or small, is a chance to learn and innovate.              </p>
-              <p>
-                I'm excited to apply my skills in the dynamic fields of software development and design. Let's connect and create something amazing together!              </p>
+                <p>
+                  Hi there! I'm currently pursuing a Bachelor's degree in
+                  Computer Engineering from Spain, with a strong passion for
+                  programming and design.
+                </p>
+                <p className="mb-2">
+                  I'm proficient in several programming languages, and I also
+                  have hands-on experience with UI/UX design tools like Figma
+                  and Adobe XD.
+                </p>
+                <p className="mb-2">
+                  In my free time, I love editing videos and creating 3D renders
+                  using software like Blender & i love make music These creative
+                  hobbies help me stay sharp and always ready to learn something
+                  new!
+                </p>
+                <p className="mb-2">
+                  These creative hobbies help me stay sharp and always ready to
+                  learn something new!
+                </p>
+                <p className="mb-2">
+                  Beyond my technical skills, I'm always looking for ways to
+                  grow—whether it's through solving coding challenges or
+                  perfecting a design. Every project, big or small, is a chance
+                  to learn and innovate.{" "}
+                </p>
+                <p>
+                  I'm excited to apply my skills in the dynamic fields of
+                  software development and design. Let's connect and create
+                  something amazing together!{" "}
+                </p>
               </div>
               <div className="h-25 w-full border border-foreground ">
                 <Canvas>
@@ -156,8 +186,7 @@ export default function Home() {
               SKILLS
             </h2>
             <div className="flex flex-wrap gap-2">
-              <div className="flex flex-row justify-between gap-4">
-              </div>
+              <div className="flex flex-row justify-between gap-4"></div>
               <div className="w-full flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <span
