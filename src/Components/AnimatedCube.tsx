@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-
 // Componente para el modelo GLTF
 function Model({ scrollProgress }: { scrollProgress: number }) {
   const { scene } = useGLTF("/toy_rocket.glb"); // Ruta correcta al modelo
@@ -28,7 +27,7 @@ function Model({ scrollProgress }: { scrollProgress: number }) {
   });
 
   return (
-    <primitive ref={modelRef} object={scene} scale={0.3} position={[0, 0, 1]} />
+    <primitive ref={modelRef} object={scene} scale={0.2} position={[0, 0, 1]} />
   );
 }
 
