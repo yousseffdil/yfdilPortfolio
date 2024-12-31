@@ -26,6 +26,7 @@ export function ContactForm() {
           },
           (error) => {
             // eslint-disable-next-line no-console
+            console.error("Failed to send email", error);
           }
         );
     }
