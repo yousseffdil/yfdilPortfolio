@@ -9,7 +9,7 @@ function BoxShow({ scrollProgress }: { scrollProgress: number }) {
     mesh.current.position.x = THREE.MathUtils.lerp(8, -8, scrollProgress);
 
     mesh.current.position.y = THREE.MathUtils.lerp(2, -2, scrollProgress);
-
+    
     mesh.current.rotation.x = scrollProgress * Math.PI * 2 / 5;
     mesh.current.rotation.y = scrollProgress * Math.PI * 2;
   });
