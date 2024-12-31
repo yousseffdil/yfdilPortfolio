@@ -5,76 +5,13 @@ import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin, Youtube, Play, Pause } from "react-feather";
 import { useState } from "react";
-import GitHubLanguagesRadar from "./Components/GitHubLanguagesRadar";
-const projects = [
-  {
-    name: "Woordle Clone",
-    description:
-      "A clone of the popular word game Wordle, built with javascript",
-    link: "https://github.com/yousseffdil/Wordle-Clone",
-  },
-  {
-    name: "AI-Temperature Converter",
-    description: "An intelligent temperature converter using machine learning",
-    link: "https://github.com/yousseffdil/Convertidor_tensorflow",
-  },
-  {
-    name: "KineticSpheres",
-    description:
-      "A mesmerizing animation of kinetic spheres using react-three-fiber",
-    link: "https://github.com/yousseffdil/KineticSphere",
-  },
-];
-
-const experiences = [
-  {
-    title: "Junior Developer",
-    company: "EIO.",
-    period: "September 2023 - Present",
-    description:
-      "Developed and maintained web & desktop applications for clients. Worked with a team of developers to deliver high-quality software solutions.",
-  },
-];
-
-const education = [
-  {
-    degree: "SMR",
-    institution: "INS Bosc de la coma",
-    year: "2020-2022",
-    description:
-      "Specialized in Linux and Windows server administration and networking, with virtualization and cloud computing.",
-  },
-  {
-    degree: "Software DEvelopment",
-    institution: "INS Bosc de la coma",
-    year: "2022-2024",
-    description:
-      "Specialized in software development, focusing on multiplatform applications.",
-  },
-];
-
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Angular",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "Docker",
-  "AWS",
-  "Figma",
-  "Adobe XD",
-  "Blender",
-  "Unity",
-  "CI/CD",
-  "Jest",
-  "C#",
-];
+import { skills } from "./data/skills";
+import { projects } from "./data/projects";
+import { experiences } from "./data/experiences";
+import { education } from "./data/education";
 
 export default function Home() {
   const [activatedAnimation, setActivatedAnimation] = useState(true);
-
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
@@ -91,7 +28,7 @@ export default function Home() {
           </nav>
           <div className="md:hidden">
             <details>
-              <summary className="cursor-pointer">☰ Menu</summary>
+              <summary className="cursor-pointer">Menu</summary>
               <nav className="flex flex-col gap-2 mt-2">
                 <a href="#Projects">Projects</a>
                 <a href="#Experience">Experience</a>
@@ -141,7 +78,22 @@ export default function Home() {
                 </Canvas>
               </div>
             </div>
-            <div className="mt-3 relative flex justify-end items-center">
+            <div className="mt-3 relative flex justify-end items-center flex flex-row gap-4">
+              {activatedAnimation ? (
+                <></>
+              ) : (
+                <div className="flex flex-row gap-1">
+                  <p>
+                    <strong>Click and drag to explore the scene!</strong>
+                  </p>
+
+                  <div className="indicator">
+                    <div className="mouse">
+                      <div className="wheel"></div>
+                    </div>
+                  </div>
+                </div>
+              )}
               <button
                 onClick={() => setActivatedAnimation(!activatedAnimation)}
                 className="border border-foreground p-2 cursor-pointer"
@@ -213,26 +165,17 @@ export default function Home() {
             </h2>
             <div className="flex flex-wrap gap-2">
               <div className="flex flex-row justify-between gap-4">
-                <div>
-                  <p>
-                    In this chart displays the programming languages I use most
-                    frequently in my <strong>GITHUB PROJECTS!!</strong>
-                  </p>
-                </div>
-                <div
-                  style={{ width: "500px", height: "500px", margin: "0 auto" }}
-                >
-                  <GitHubLanguagesRadar />
-                </div>
               </div>
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="border border-foreground p-2 text-sm"
-                >
-                  {skill}
-                </span>
-              ))}
+              <div className="w-full flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="border border-foreground p-2 text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </section>
           <section className="border border-foreground p-6">

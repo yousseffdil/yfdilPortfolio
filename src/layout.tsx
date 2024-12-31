@@ -1,6 +1,5 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { CustomCursor } from "./Components/CustomCursor";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -20,7 +19,6 @@ export default function RootLayout({
       {children}
       <Analytics />
       <SpeedInsights/>
-      <CustomCursor />
     </ThemeProvider>
   );
 }

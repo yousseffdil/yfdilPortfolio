@@ -10,11 +10,15 @@ html{
 :root {
   --background: #fff9ec;
   --foreground: black;
+  --mouse : #ff5722;
+  --whele : #eb8f34;
 }
 
 [data-theme='dark'] {
   --background: black;
   --foreground: white;
+  --mouse : white;
+  --whele : white;
 }
 
 body {
@@ -122,4 +126,44 @@ form input, textarea {
 }
 label{
   cursor: none;
+}
+
+summary{
+  cursor: none;
+}
+.indicator{
+  width: 25%;
+}
+.indicator .mouse {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--mouse);
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  padding-top: 5px;
+  animation: easeInOut 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.indicator .mouse .wheel{
+  background-color: var(--whele);
+  width: 25%;
+  height: 30%;
+  border-radius: 50%;
+
+}
+@keyframes easeInOut {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(10px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }

@@ -38,9 +38,9 @@ const GitHubLanguagesRadar = () => {
       {
         label: 'Most Used Languages',
         data: Object.values(languages),
-        backgroundColor: theme === 'dark' ? 'rgba(52, 144, 235, 0.24)' : 'rgba(235, 143, 52, 0.2)',
+        backgroundColor: theme === 'dark' ? 'rgba(52, 144, 235, 0.34)' : 'rgba(235, 143, 52, 0.2)',
         borderColor: theme === 'dark' ? 'rgba(52, 143, 235, 1)' : 'rgba(235, 143, 52, 1)',
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };
@@ -50,13 +50,13 @@ const GitHubLanguagesRadar = () => {
       r: {
         angleLines: {
           display: true,
-          color: theme === 'dark' ? 'rgba(150, 150, 150, 0.5)' : 'rgba(200, 200, 200, 0.5)',
+          color: theme === 'dark' ? 'rgb(150, 150, 150)' : 'rgb(200, 200, 200)',
         },
         grid: {
-          color: theme === 'dark' ? 'rgba(150, 150, 150, 0.5)' : 'rgba(200, 200, 200, 0.5)',
+          color: theme === 'dark' ? 'rgb(150, 150, 150)' : 'rgb(200, 200, 200)',
         },
         pointLabels: {
-          color: theme === 'dark' ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)',
+          color: theme === 'dark' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)',
         },
         suggestedMin: 0,
         ticks:{
@@ -72,7 +72,7 @@ const GitHubLanguagesRadar = () => {
   };
 
   return (
-    <div className='border border-foreground' style={{ width: '500px', height: '500px', margin: '0 auto' }} >
+    <div className='border border-foreground p-4' style={{ width: '500px', height: '500px', margin: '0 auto' }} >
         <Radar data={data} options={options} />
     </div>
   );
