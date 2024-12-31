@@ -12,12 +12,11 @@ function Model({ scrollProgress }: { scrollProgress: number }) {
     if (scene) {
       scene.traverse((child) => {
         if (child instanceof THREE.Mesh && child.material) {
-          // Ajuste de materiales para mayor calidad
           if (Array.isArray(child.material)) {
             child.material.forEach((mat) => {
               mat.color.set(color);
-              mat.roughness = 0.2; // Superficie más suave
-              mat.metalness = 0.8; // Más reflectivo
+              mat.roughness = 0.2; 
+              mat.metalness = 0.8; 
               mat.needsUpdate = true;
             });
           } else {
@@ -27,7 +26,6 @@ function Model({ scrollProgress }: { scrollProgress: number }) {
             child.material.needsUpdate = true;
           }
 
-          // Habilitar sombras si el objeto lo soporta
           child.castShadow = true;
           child.receiveShadow = true;
         }
@@ -59,12 +57,11 @@ export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
           outputColorSpace: THREE.SRGBColorSpace,
         }}
       >
-        {/* Iluminación de alta calidad */}
         <ambientLight intensity={1} />
         <directionalLight
           position={[5, 10, 5]}
           intensity={1.5}
-          shadow-mapSize-width={2048} // Aumentar resolución de sombra
+          shadow-mapSize-width={2048} 
           shadow-mapSize-height={2048}
         />
         <spotLight
