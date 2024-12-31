@@ -6,11 +6,11 @@ function BoxShow({ scrollProgress }: { scrollProgress: number }) {
   const mesh = useRef<THREE.Mesh>(null!);
 
   useFrame(() => {
-    mesh.current.position.x = THREE.MathUtils.lerp(5, -5, scrollProgress);
+    mesh.current.position.x = THREE.MathUtils.lerp(8, -8, scrollProgress);
 
     mesh.current.position.y = THREE.MathUtils.lerp(2, -2, scrollProgress);
 
-    mesh.current.rotation.x = scrollProgress * Math.PI * 2;
+    mesh.current.rotation.x = scrollProgress * Math.PI * 2 / 5;
     mesh.current.rotation.y = scrollProgress * Math.PI * 2;
   });
 
@@ -25,7 +25,7 @@ function BoxShow({ scrollProgress }: { scrollProgress: number }) {
 export function AnimatedCube({ scrollProgress }: { scrollProgress: number }) {
 
   return (
-    <div style={{ height: "200vh", position: "fixed", width: "100%" }}>
+    <div style={{ height: "200vh", position: "fixed", width: "100%", zIndex: -1 }}>
       <Canvas style={{ height: "100vh" }}>
         <perspectiveCamera position={[0, 0, 5]} />
         <ambientLight />
