@@ -16,8 +16,11 @@ function BoxShow({ scrollProgress }: { scrollProgress: number }) {
 
   return (
     <mesh ref={mesh} position={[5, 2, 0]}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial />
+      <boxGeometry args={[1, 1, 1]}  />
+      <meshStandardMaterial 
+      color={"#eb3434"} 
+      emissive={"#eb3434"}
+      />
     </mesh>
   );
 }
