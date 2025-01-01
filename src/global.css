@@ -197,29 +197,25 @@ summary{
 }
 .blobText::after{
   content: '';
-  position: absolute;
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 20px solid var(--foreground);
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.5);
+  transform: scale(0.5);
+  position: absolute;
+  top: 87.6%;
 }
 
 .Duck{
   top: 60%;
-  right: 40px;
   animation: duck 2s ease-in-out infinite;
-  width: 10%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 20vh;
-  position: absolute;
   animation: fadein 1s ease-in;
-
 }
 .Duck Canvas{
   display: flex;

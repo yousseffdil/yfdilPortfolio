@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 
-function Model({ scrollProgress, setScale }: { scrollProgress: number; setScale: boolean }) {
+function Model() {
   const modelRef = useRef<THREE.Group>(null!);
   const { scene } = useGLTF("/duck.glb");
   const color = "#ffffff";
@@ -32,68 +32,37 @@ function Model({ scrollProgress, setScale }: { scrollProgress: number; setScale:
 
   useFrame((_, delta) => {
     if (modelRef.current) {
-      if (scrollProgress === 1) {
-        modelRef.current.rotation.y += delta * 2;
-        modelRef.current.rotation.z = -0.1;
-
-        if (!setScale) {
-          modelRef.current.scale.set(2, 2, 2);
-        }
-      } else {
-        modelRef.current.position.set(0, 0, -10);
-        modelRef.current.rotation.y = 0;
-        modelRef.current.scale.set(0, 0, 0);
-      }
+      modelRef.current.rotation.y += delta * 2;
+      modelRef.current.rotation.z = 0.1;
     }
   });
-
-  useEffect(() => {
-    if (modelRef.current) {
-      if (setScale) {
-        modelRef.current.scale.set(2, 2, 2);
-      } else if (scrollProgress !== 1) {
-        modelRef.current.scale.set(1, 1, 1);
-      }
-    }
-  }, [setScale, scrollProgress]);
 
   return (
     <primitive
       object={scene}
       ref={modelRef}
-      position={[0, 0, 1]}
+      position={[0, -1, 0]}
       rotation={[0, 0, 0]}
+      scale={[0.5, 0.5, 0.5]}
     />
   );
 }
 
-function BlobText({ scrollProgress, textToDisplay }: { scrollProgress: number, textToDisplay: string }) {
-  const [showText, setShowText] = useState(false);
-  useEffect(() => {
-    if (scrollProgress == 1) {
-      setShowText(true);
-    } else {
-      setShowText(false);
-    }
-  }, [scrollProgress]);
-
+function BlobText({ textToDisplay }: {  textToDisplay: string }) {
   return (
     <div style={{ zIndex: 100 }}>
-      {showText ? (
-        <div className="blobText" style={{zIndex: 1, top: "55%", left: "92%", transform: "translate(-50%, -50%)", bottom: "0", position: "fixed"}}>
-          {textToDisplay === "Cuack + 0" ? 
-            <h2>👈 CUACK WITH ME 🦆</h2> : 
-            <><h2>{textToDisplay}</h2></>
-          }
-        </div>
-      ) : <></>}
+      <div className="blobText" style={{zIndex: 1}}>
+        {textToDisplay === "Cuack + 0" ? 
+          <h2>👆 CUACK WITH ME 🦆</h2> : 
+          <><h2>{textToDisplay}</h2></>
+        }
+      </div>
     </div>
   );
 }
 
-export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
+export function EnhancedScene() {
   const [clicks, setClicks] = useState(0);
-  const [stateScale, setStateScale] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const resetTimeout = () => {
@@ -122,14 +91,13 @@ export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
 
   return (
     <>
-      <BlobText scrollProgress={scrollProgress} textToDisplay={"Cuack + " + clicks} />
-      <div style={{ position: "fixed", zIndex: 10 }} className="cursor-pointer Duck">
+      <div className="flex justify-center flex-col items-center w-full">
+      <BlobText textToDisplay={"Cuack + " + clicks} />
+      <div style={{ zIndex: 10 }} className="cursor-pointer Duck">
         <Canvas
           dpr={[1, 2]}
           camera={{ position: [0, -1, 3], fov: 50 }}
           onClick={handleClick}
-          onMouseDown={() => setStateScale(true)}
-          onMouseUp={() => setStateScale(false)}
           gl={{
             antialias: true,
             toneMapping: THREE.ACESFilmicToneMapping,
@@ -151,12 +119,13 @@ export function EnhancedScene({ scrollProgress }: { scrollProgress: number }) {
             shadow-mapSize-width={2048}
             shadow-mapSize-height={2048}
           />
-          <Model scrollProgress={scrollProgress} setScale={stateScale} />
+          <Model />
           <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.5, 0]}>
             <planeGeometry args={[10, 10]} />
             <shadowMaterial opacity={0.4} />
           </mesh>
         </Canvas>
+      </div>
       </div>
     </>
   );

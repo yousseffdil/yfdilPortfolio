@@ -31,7 +31,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
       <CustomCursor />
-      <EnhancedScene scrollProgress={scrollProgress} />
       <div className="relative">
         <header className="p-4 border-b border-foreground flex flex-wrap justify-between items-center gap-4">
           <h1 className="text-xl font-bold">Youssef Fdil</h1>
@@ -204,6 +203,7 @@ export default function Home() {
               CONTACT ME
             </h2>
             <ContactForm />
+            <EnhancedScene />
           </section>
         </main>
 
