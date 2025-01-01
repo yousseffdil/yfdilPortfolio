@@ -103,7 +103,7 @@ export default function Home() {
               {activatedAnimation ? (
                 <></>
               ) : (
-                <div className="flex flex-row gap-1">
+                <div className="flex flex-row gap-1  justify-end items-center	 w-[600px]">
                   <p>
                     <strong>Click and drag to explore the scene!</strong>
                   </p>
