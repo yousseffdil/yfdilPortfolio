@@ -4,7 +4,7 @@ import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin, Youtube, Play, Pause } from "react-feather";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { skills } from "./data/skills";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
@@ -13,20 +13,6 @@ import { EnhancedScene } from "./Components/AnimatedCube";
 
 export default function Home() {
   const [activatedAnimation, setActivatedAnimation] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollProgress(
-        window.scrollY /
-          (document.documentElement.scrollHeight - window.innerHeight)
-      );
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground font-mono">
