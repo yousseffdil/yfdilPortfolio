@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF,OrbitControls } from "@react-three/drei";
 
 function Model({size}: {size: boolean}) {
   const modelRef = useRef<THREE.Group>(null!);
@@ -93,7 +93,6 @@ export function EnhancedScene() {
   const handleClick = () => {
     setClicks((prev) => prev + 1);
     setSize(true);
-
     resetTimeout();
   };
 
@@ -120,7 +119,9 @@ export function EnhancedScene() {
               toneMapping: THREE.ACESFilmicToneMapping,
               outputColorSpace: THREE.SRGBColorSpace,
             }}
+            
           >
+            <OrbitControls enableZoom={false} enablePan={false} />
             <ambientLight intensity={1} />
             <directionalLight
               position={[5, 10, 5]}
