@@ -181,6 +181,20 @@ summary{
   }
 }
 
+.Container_BlobText{
+  animation: fadein 1s ease-in;
+  position: relative;
+  right: 15%;
+}
+.Container_All{
+  width: 20%;
+  display: flex;
+  justify-content: center !important;
+  position: relative;
+  margin-top: 1vh;
+  animation: fadein 1s ease-in;
+  margin: 0 auto;
+}
 
 .blobText{
   font-weight: bold;
@@ -192,31 +206,42 @@ summary{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1vh;
   border-radius: 20px;
   animation: fadein 1s ease-in;
+  box-shadow: 10px 5px 1px 1px rgba(0, 0, 0, 0.466);
 }
-.blobText::after{
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid var(--foreground);
-  transform: scale(0.5);
+.blobText_Corner{
+  width: 100px;
+  height: 10px;
+  border-radius: 100px;
   position: absolute;
-  top: 87.6%;
-}
+  top: 110%;
+  left: 12vh;
+  background-color: var(--foreground);
+  box-shadow: 10px 5px 1px 1px rgba(0, 0, 0, 0.466);
 
+}
+.blobText_Corner::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--foreground);
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  border-radius: 100%;
+  box-shadow: 10px 5px 1px 1px rgba(0, 0, 0, 0.466);
+
+}
 .Duck{
   top: 60%;
-  animation: duck 2s ease-in-out infinite;
-  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
   animation: fadein 1s ease-in;
+  width: 100%;
+  margin-top: 1vh;
+  margin-left: 25vh;
 }
 .Duck Canvas{
   display: flex;
