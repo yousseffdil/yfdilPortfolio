@@ -3,7 +3,7 @@ import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
 import { CustomCursor } from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
-import { GitHub, Linkedin, Youtube, Play, Pause } from "react-feather";
+import { GitHub, Linkedin, Youtube, Play, Pause, File } from "react-feather";
 import { useState } from "react";
 import { skills } from "./data/skills";
 import { projects } from "./data/projects";
@@ -85,28 +85,40 @@ export default function Home() {
                 </Canvas>
               </div>
             </div>
-            <div className="mt-3 relative flex justify-end items-center flex flex-row gap-4">
-              {activatedAnimation ? (
-                <></>
-              ) : (
-                <div className="flex flex-row gap-1  justify-end items-center	 w-[600px]">
-                  <p>
-                    <strong>Click and drag to explore the scene!</strong>
-                  </p>
+            <div className="mt-3 relative flex items-center flex-row gap-4 justify-between w-full">
+              {/* Botón Resume a la izquierda */}
+              <button
+                className="border border-foreground p-2 flex items-center -button-style"
+                onClick={() => window.open("/RESUME CV.pdf", "_blank")}
+              >
+                <File className="mr-2" />
+                Resume
+              </button>
 
-                  <div className="indicator">
-                    <div className="mouse">
-                      <div className="wheel"></div>
+              {/* Contenedor de elementos a la derecha */}
+              <div className="flex flex-row gap-4 items-center">
+                {/* Texto e indicador */}
+                {!activatedAnimation && (
+                  <div className="flex flex-row gap-1 items-center">
+                    <p>
+                      <strong>Click and drag to explore the scene!</strong>
+                    </p>
+                    <div className="indicator">
+                      <div className="mouse">
+                        <div className="wheel"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-              <button
-                onClick={() => setActivatedAnimation(!activatedAnimation)}
-                className="border border-foreground p-2 cursor-pointer"
-              >
-                {activatedAnimation ? <Pause /> : <Play />}
-              </button>
+                )}
+
+                {/* Botón de Play/Pause */}
+                <button
+                  onClick={() => setActivatedAnimation(!activatedAnimation)}
+                  className="border border-foreground p-2 cursor-pointer"
+                >
+                  {activatedAnimation ? <Pause /> : <Play />}
+                </button>
+              </div>
             </div>
           </section>
           <section className="border border-foreground p-6 relative">
