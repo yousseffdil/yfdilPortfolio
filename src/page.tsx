@@ -125,6 +125,16 @@ export default function Home() {
                   >
                     <h3 className="text-xl font-bold mb-2">{project.name}</h3>
                     <p>{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {project.lenguages.map((language) => (
+                        <span
+                          key={language}
+                          className="border border-foreground p-2 text-sm"
+                        >
+                          {language}
+                        </span>
+                      ))}
+                    </div>
                     <GitHub className="mt-2 " />
                   </div>
                 </div>
