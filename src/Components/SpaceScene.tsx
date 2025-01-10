@@ -83,8 +83,8 @@ export function SpaceScene({activatedAnimation}: {activatedAnimation: boolean}) 
   useFrame(({ clock }) => {
     if(activatedAnimation){
       const elapsedTime = clock.getElapsedTime();
-      camera.position.x = radius * Math.cos(elapsedTime * speed) / 1.5;
-      camera.position.z = radius * Math.sin(elapsedTime * speed) / 1.8;
+      camera.position.x = radius * Math.cos(elapsedTime * speed);
+      camera.position.z = radius * Math.tanh(elapsedTime * speed) / 1.8;
       camera.position.y = 1;
       camera.lookAt(0, -1, 0);
     }else{
