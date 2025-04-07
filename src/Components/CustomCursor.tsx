@@ -98,7 +98,7 @@ export default function CustomCursor() {
 
       {/* Orbiting element */}
       <div
-        className={`absolute rounded-full bg-orange-300 transition-transform custom-cursor.pointer ${
+        className={`absolute rounded-full bg-orange-300 transition-transform custom-cursor ${
           isHovering ? "w-3 h-3" : "w-3 h-3"
         }`}
         style={{

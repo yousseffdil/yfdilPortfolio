@@ -41,8 +41,7 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  border-color: #ff5722 !important;
-  filter: drop-shadow(0 0 5px #ff56228f);
+  border-color: var(--mouse) !important;
 
 }
 
@@ -242,4 +241,8 @@ summary{
   to {
     opacity: 1;
   }
+}
+
+canvas{
+  scale: 0.8;
 }

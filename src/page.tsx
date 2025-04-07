@@ -9,8 +9,8 @@ import { skills } from "./data/skills";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import { education } from "./data/education";
-// import { EnhancedScene } from "./Components/AnimatedCube";
-
+import { EnhancedScene } from "./Components/AnimatedCube";
+import GitHubLanguagesRadar from "./Components/GitHubLanguagesRadar";
 export default function Home() {
   const [activatedAnimation, setActivatedAnimation] = useState(true);
 
@@ -153,7 +153,14 @@ export default function Home() {
               ))}
             </div>
           </section>
-
+          <section className="border border-foreground p-6">
+            <h2 className="text-3xl font-bold mb-4" id="GitHub Stats">
+              GITHUB STATS
+            </h2>
+            <div className="flex flex-col md:flex-row gap-6">
+                <GitHubLanguagesRadar />
+            </div>
+          </section>
           <section className="border border-foreground p-6">
             <h2 className="text-3xl font-bold mb-4" id="Experience">
               EXPERIENCE
@@ -211,7 +218,7 @@ export default function Home() {
               CONTACT ME
             </h2>
             <ContactForm />
-            {/* <EnhancedScene /> */}
+            <EnhancedScene />
           </section>
         </main>
 
