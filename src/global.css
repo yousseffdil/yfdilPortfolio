@@ -38,31 +38,15 @@ body {
 }
 
 .custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid;
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  border-radius: 100%;
+  border-color: #ff5722 !important;
+  filter: drop-shadow(0 0 5px #ff56228f);
+
 }
-.custom-cursor::after{
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-color: var(--foreground);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
-}
-.custom-cursor.pointer::after{
-  width: 10px;
-  height: 10px;
-  background-color: #eb8f34;
-  border-radius: 100%;
-}
+
+
 .custom-cursor.pointer {
   border-color: #ff5722 !important;
   transform: scale(1.5);

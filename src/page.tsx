@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { SpaceScene } from "./Components/SpaceScene";
 import { ThemeToggle } from "./Components/ThemeToggle";
-import { CustomCursor } from "./Components/CustomCursor";
+import CustomCursor from "./Components/CustomCursor";
 import { ContactForm } from "./Components/ContactForm";
 import { GitHub, Linkedin, Youtube, Play, Pause, File } from "react-feather";
 import { useState } from "react";
