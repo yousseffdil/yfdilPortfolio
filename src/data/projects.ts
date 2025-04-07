@@ -19,12 +19,5 @@ export const projects = [
             "A mesmerizing animation of kinetic spheres using react-three-fiber",
         link: "https://github.com/yousseffdil/KineticSphere",
         lenguages: ["Javascript", "React", "Three.js"],
-    },
-    {
-        name: "2d Graphic Engine",
-        description:
-            "A 2d graphic engine built with C#",
-        link: "https://github.com/yousseffdil/KineticSphere",
-        lenguages: ["C#"],
-    },
+    }
 ];
