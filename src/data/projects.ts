@@ -1,10 +1,10 @@
 export const projects = [
     {
-        name: "Woordle Clone",
+        name: "3D coffe web concept",
         description:
-            "A clone of the popular word game Wordle, built with javascript",
+            "Una experiencia web 3D inmersiva que presenta una taza de café estilizada, animada en tiempo real usando Three.js y React Three Fiber. Ideal como componente de landing page o inspiración para proyectos interactivos.",
         link: "https://github.com/yousseffdil/Wordle-Clone",
-        lenguages: ["Javascript", "HTML", "CSS"],
+        lenguages: ["React", "Next", "Three.JS"],
     },
     {
         name: "AI-Temperature Converter",
