@@ -5,14 +5,14 @@ export const skills = [
     "Angular",
     "Node.js",
     "Express",
-    "MongoDB",
     "Docker",
     "AWS",
     "Figma",
     "Adobe XD",
     "Blender",
-    "Unity",
     "CI/CD",
     "Jest",
     "C#",
+    "Rust",
+    "ASP.NET"
 ];

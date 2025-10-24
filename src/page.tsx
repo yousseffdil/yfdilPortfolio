@@ -98,18 +98,18 @@ export default function Home() {
               {/* Contenedor de elementos a la derecha */}
               <div className="flex flex-row gap-4 items-center">
                 {/* Texto e indicador */}
-                {!activatedAnimation && (
-                  <div className="flex flex-row gap-1 items-center">
-                    <p>
-                      <strong>Click and drag to explore the scene!</strong>
-                    </p>
-                    <div className="indicator">
-                      <div className="mouse">
-                        <div className="wheel"></div>
-                      </div>
+                <div className="flex flex-row gap-1 items-center">
+                  <p>
+                    <strong>
+                      Pause the scena and explore it, using your mouse!🐀
+                    </strong>
+                  </p>
+                  <div className="indicator">
+                    <div className="mouse">
+                      <p>➡️</p>
                     </div>
                   </div>
-                )}
+                </div>
 
                 {/* Botón de Play/Pause */}
                 <button
@@ -158,7 +158,7 @@ export default function Home() {
               GITHUB STATS
             </h2>
             <div className="flex flex-col md:flex-row gap-6">
-                <GitHubLanguagesRadar />
+              <GitHubLanguagesRadar />
             </div>
           </section>
           <section className="border border-foreground p-6">

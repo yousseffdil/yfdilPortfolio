@@ -7,17 +7,17 @@ export const projects = [
         lenguages: ["React", "Next", "Three.JS"],
     },
     {
-        name: "AI-Temperature Converter",
-        description: "An intelligent temperature converter using machine learning",
-        link: "https://github.com/yousseffdil/Convertidor_tensorflow",
-        lenguages: ["Python", "Tensorflow"],
+        name: "RUST WIDGETS",
+        description: "AA modular widget manager for Linux wirtten in Rust. Create and display custom widgets using HTML/CSS",
+        link: "https://github.com/yousseffdil/RustWidgets",
+        lenguages: ["RUST"],
 
     },
     {
-        name: "KineticSpheres",
+        name: "NEURAL NETWORK",
         description:
-            "A mesmerizing animation of kinetic spheres using react-three-fiber",
-        link: "https://github.com/yousseffdil/KineticSphere",
-        lenguages: ["Javascript", "React", "Three.js"],
+            "A Rust implementation of a simple linear regression model that learns to convert temperatures from Celsius to Fahrenheit using gradient descent optimization.",
+        link: "https://github.com/yousseffdil/neural-network",
+        lenguages: ["RUST", "MATH"],
     }
 ];

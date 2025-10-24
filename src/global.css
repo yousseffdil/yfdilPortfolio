@@ -131,15 +131,14 @@ summary{
   width: 50%;
   height: 100%;
   margin: 0 auto;
-  border: 1px solid var(--mouse);
   display: flex;
   justify-content: center;
-  border-radius: 50px;
-  padding-top: 5px;
+  padding-top: 2px;
   animation: easeInOut 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
   will-change: transform;
   backface-visibility: hidden;
   transform-style: preserve-3d;
+  font-size: 1.5rem;
 }
 
 .indicator .mouse .wheel{
