@@ -15,4 +15,9 @@ export const skills = [
     "CI/CD",
     "Jest",
     "C#",
+    "RUST",
+    "Python",
+    "Golang",
+    "Java",
+    "C++"
 ];

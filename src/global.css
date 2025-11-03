@@ -131,7 +131,6 @@ summary{
   width: 50%;
   height: 100%;
   margin: 0 auto;
-  border: 1px solid var(--mouse);
   display: flex;
   justify-content: center;
   border-radius: 50px;

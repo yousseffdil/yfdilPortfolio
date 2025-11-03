@@ -98,18 +98,16 @@ export default function Home() {
               {/* Contenedor de elementos a la derecha */}
               <div className="flex flex-row gap-4 items-center">
                 {/* Texto e indicador */}
-                {!activatedAnimation && (
                   <div className="flex flex-row gap-1 items-center">
                     <p>
                       <strong>Click and drag to explore the scene!</strong>
                     </p>
                     <div className="indicator">
                       <div className="mouse">
-                        <div className="wheel"></div>
+                        <p>➡️</p>
                       </div>
                     </div>
                   </div>
-                )}
 
                 {/* Botón de Play/Pause */}
                 <button
