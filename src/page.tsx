@@ -199,16 +199,18 @@ export default function Home() {
             </h2>
             <div className="flex flex-wrap gap-2">
               <div className="flex flex-row justify-between gap-4"></div>
-              <div className="w-full flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="border border-foreground p-2 text-sm"
-                  >
+              <div className="w-full flex flex-wrap gap-2 ">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="border border-foreground p-2 text-sm relative overflow-hidden group hover:bg-black"
+                >
+                  <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                     {skill}
                   </span>
-                ))}
-              </div>
+                </span>
+              ))}
+            </div>
             </div>
           </section>
           <section className="border border-foreground p-6">

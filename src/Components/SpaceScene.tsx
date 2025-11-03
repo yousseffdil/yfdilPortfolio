@@ -27,7 +27,7 @@ function PlanetRings({RotationValue} : {RotationValue: number}) {
 
   useFrame(() => {
     if (ringRef.current) {
-      ringRef.current.rotation.x = RotationValue; // Rotate 90 degrees
+      ringRef.current.rotation.x = RotationValue;
     }
   });
 
